@@ -1,0 +1,21 @@
+<program>
+   1: # Dette programmet inneholder en tekststreng som ikke avsluttes på
+   2: # samme linje.
+   3: 
+   4: t1 = "Denne er OK"
+  <stmt>
+    <small stmt list>
+      <small stmt>
+        <assignment>
+          <name>
+          </name>
+          <expr>
+            <and test>
+              <not test>
+                <comparison>
+                  <term>
+                    <factor>
+                      <primary>
+                        <atom>
+                          <string literal>
+Asp parser error on line 4: String literal not terminated!

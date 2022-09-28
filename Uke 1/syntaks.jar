@@ -1,0 +1,62 @@
+# Oppgave 5 om syntaks
+
+# a.)
+
+a = 4
+# Feil
+# b = 2 ** a
+
+# Korrekt
+b = 2 * a
+print("Svaret er", b)
+
+# b.)
+
+a = "x"
+a_ = a + "-"
+_a = "-" + a
+print("\", a, "=", a)
+print("\", a_, "=", a_)
+print("\", _a, "=", _a)
+
+# c.)
+
+x = 9
+y = -1
+if x == y+1: x = x+1
+
+# d.)
+
+v = int(input("Skriv et tall: "))
+if v < 0:
+    print(v, "er negativt.")
+else:
+    if v == 0:
+        print(v, "er null.")
+    else:
+        print(v, "er positivt.")
+
+# e.)
+
+tab = [1, 10, 100]
+if tab[0] <= tab[1] <= tab[2]:
+    print("Sortert")
+else:
+    print("Ikke sortert")
+
+# f.)
+
+n = 0
+
+def f(v):
+    global n
+    n = n + v
+
+f(1);  f(2);  f(3)
+print("Svaret", 'er', n)
+
+# g.)
+
+for i in range(0,10): 
+    j = i+1;
+    print (j*j);
