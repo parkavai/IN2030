@@ -14,8 +14,7 @@ public class AspPassStmt extends AspSmallStmt{
     static AspPassStmt parse(Scanner s){
         enterParser("pass stmt");
         
-        AspPassStmt passStmt= new AspPassStmt(s.curLineNum());
-        skip(s, passToken);
+        AspPassStmt passStmt= new AspPassStmt(s.curLineNum()); skip(s, passToken);
 
         leaveParser("pass stmt");
         return passStmt;

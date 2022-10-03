@@ -17,13 +17,7 @@ public class AspFloatLiteral extends AspAtom {
         enterParser("float literal");
 
         AspFloatLiteral floatLiteral = new AspFloatLiteral(s.curLineNum());
-        String value = s.curToken().stringLit;
-        if(value.charAt(0) == '0' && value.length() > 1){
-            parserError("Asp only accepts float values \'0.0\'' or every other number!", s.curLineNum());
-        }
-        else{
-            floatLiteral.floatValue = s.curToken().floatLit;
-        }
+        floatLiteral.floatValue = s.curToken().floatLit;
         skip(s, floatToken);
 
         leaveParser("float literal");

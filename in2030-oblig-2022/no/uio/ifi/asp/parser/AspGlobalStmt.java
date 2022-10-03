@@ -15,8 +15,7 @@ public class AspGlobalStmt extends AspSmallStmt{
 
     static AspGlobalStmt parse(Scanner s){
         enterParser("global");
-        AspGlobalStmt global = new AspGlobalStmt(s.curLineNum());
-        skip(s, globalToken);
+        AspGlobalStmt global = new AspGlobalStmt(s.curLineNum()); skip(s, globalToken);
 
         while(true){
             global.nameList.add(AspName.parse(s));
@@ -33,8 +32,7 @@ public class AspGlobalStmt extends AspSmallStmt{
         prettyWrite("global ");
         nameList.get(0).prettyPrint();
         for(int i = 1; i < nameList.size(); i++){
-            prettyWrite(", ");
-            nameList.get(i).prettyPrint();
+            prettyWrite(", "); nameList.get(i).prettyPrint();
         }
     }
 

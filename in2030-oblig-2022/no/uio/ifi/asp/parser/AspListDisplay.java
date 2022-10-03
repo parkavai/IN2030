@@ -16,8 +16,7 @@ public class AspListDisplay extends AspAtom {
     static AspListDisplay parse(Scanner s){
         enterParser("list display");
 
-        AspListDisplay listDisplay = new AspListDisplay(s.curLineNum());
-        skip(s, leftBracketToken);
+        AspListDisplay listDisplay = new AspListDisplay(s.curLineNum()); skip(s, leftBracketToken);
 
         if(s.curToken().kind != rightBracketToken){
             while(true){

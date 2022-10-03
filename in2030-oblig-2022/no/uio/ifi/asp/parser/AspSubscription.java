@@ -15,7 +15,7 @@ public class AspSubscription extends AspSyntax{
     static AspSubscription parse(Scanner s){
         enterParser("subscription");
 
-        AspSubscription subscription= new AspSubscription(s.curLineNum());
+        AspSubscription subscription= new AspSubscription(s.curLineNum()); 
         skip(s, leftBracketToken); // Skip the first left bracket'['
         subscription.expr = AspExpr.parse(s);
         skip(s, rightBracketToken); // Skip past the right bracket ']'

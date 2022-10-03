@@ -28,7 +28,7 @@ public class AspDictDisplay extends AspAtom{
          */
         if(s.curToken().kind != rightBraceToken){
             dictDisp.isString = true;
-            // There is  a string literal
+            // There is a string literal
             while(true){
                 dictDisp.strList.add(AspStringLiteral.parse(s));
                 skip(s, colonToken);
@@ -50,9 +50,9 @@ public class AspDictDisplay extends AspAtom{
             strList.get(0).prettyPrint();
             prettyWrite(":");
             for(int i = 1; i < strList.size(); i++){
-                System.out.print(":");
+                prettyWrite(":");
                 exprList.get(i-1).prettyPrint();
-                System.out.print(", ");
+                prettyWrite(", ");
                 strList.get(i).prettyPrint();
             }
         }

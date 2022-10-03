@@ -28,10 +28,10 @@ public class AspArguments extends AspAtom{
             while(true){
                 arguments.expression.add(AspExpr.parse(s));
                 if(s.curToken().kind != commaToken) break;
-                arguments.stringList.add(", ");
-                skip(s, commaToken);
+                arguments.stringList.add(", "); skip(s, commaToken);
             }
         }
+
         skip(s, rightParToken); // Skip past the second parenthesis ')'
         leaveParser("arguments");
         return arguments;
@@ -44,7 +44,7 @@ public class AspArguments extends AspAtom{
         if(isExpr){
             expression.get(0).prettyPrint();
             for(int i = 1; i < expression.size(); i++){
-                prettyWrite(stringList.get(i-1));
+                prettyWrite(stringList.get(i-1)); 
                 expression.get(i).prettyPrint();
             }   
         }

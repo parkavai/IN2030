@@ -16,8 +16,7 @@ public class AspName extends AspAtom{
     static AspName parse(Scanner s){
         enterParser("name");
         AspName name = new AspName(s.curLineNum());
-        name.value = s.curToken().name;
-        skip(s, nameToken);
+        name.value = s.curToken().name; skip(s, nameToken);
 
         leaveParser("name");
         return name;

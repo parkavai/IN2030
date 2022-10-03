@@ -15,8 +15,7 @@ public class AspNoneLiteral extends AspAtom {
     static AspNoneLiteral parse(Scanner s){
         enterParser("none literal");
 
-        AspNoneLiteral none = new AspNoneLiteral(s.curLineNum());
-        skip(s, noneToken);
+        AspNoneLiteral none = new AspNoneLiteral(s.curLineNum()); skip(s, noneToken);
 
         leaveParser("none literal");
         return none;

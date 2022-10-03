@@ -19,7 +19,7 @@ public class AspSuite extends AspSyntax {
         enterParser("suite");
         AspSuite suite = new AspSuite(s.curLineNum());
         if(s.curToken().kind == newLineToken){
-            skip(s, newLineToken);
+            skip(s, newLineToken); 
             skip(s, indentToken);
             while(true){
                 suite.stmt.add(AspStmt.parse(s));

@@ -16,10 +16,8 @@ public class AspInnerExpr extends AspAtom{
     static AspInnerExpr parse(Scanner s){
         enterParser("inner expr");
 
-        AspInnerExpr innExpr = new AspInnerExpr(s.curLineNum());
-        skip(s, leftParToken); // Skip the first parenthesis '('
-        innExpr.expr = AspExpr.parse(s);
-        skip(s, rightParToken); // Skip past the second parenthesis ')'
+        AspInnerExpr innExpr = new AspInnerExpr(s.curLineNum()); skip(s, leftParToken); // Skip the first parenthesis '('
+        innExpr.expr = AspExpr.parse(s); skip(s, rightParToken); // Skip past the second parenthesis ')'
 
         leaveParser("inner expr");
         return innExpr;

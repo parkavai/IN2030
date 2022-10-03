@@ -18,12 +18,9 @@ public class AspForStmt extends AspCompoundStmt {
     static AspForStmt parse(Scanner s){
         enterParser("for stmt");
 
-        AspForStmt forStmt = new AspForStmt(s.curLineNum());
-        skip(s, forToken);
-        forStmt.name = AspName.parse(s);
-        skip(s, inToken);
-        forStmt.expr = AspExpr.parse(s);
-        skip(s, colonToken);
+        AspForStmt forStmt = new AspForStmt(s.curLineNum()); skip(s, forToken);
+        forStmt.name = AspName.parse(s); skip(s, inToken);
+        forStmt.expr = AspExpr.parse(s); skip(s, colonToken);
         forStmt.suite = AspSuite.parse(s);
         
         leaveParser("for stmt");

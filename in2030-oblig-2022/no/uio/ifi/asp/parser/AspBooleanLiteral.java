@@ -18,12 +18,10 @@ public class AspBooleanLiteral extends AspAtom {
 
         AspBooleanLiteral bool = new AspBooleanLiteral(s.curLineNum());
         if(s.curToken().kind == trueToken){
-            bool.boolValue = "True";
-            skip(s, trueToken);
+            bool.boolValue = "True"; skip(s, trueToken);
         }
         else{
-            bool.boolValue = "False";
-            skip(s, falseToken);
+            bool.boolValue = "False"; skip(s, falseToken);
         }
         
         // skip(s, s.curToken().kind);

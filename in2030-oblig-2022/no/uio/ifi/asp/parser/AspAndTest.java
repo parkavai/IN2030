@@ -22,10 +22,9 @@ class AspAndTest extends AspSyntax {
         while (true) {
             aat.notTests.add(AspNotTest.parse(s));
             if (s.curToken().kind != andToken) break;
-            aat.andList.add(" and ");
-            skip(s, andToken);
+            aat.andList.add(" and "); skip(s, andToken);
         }
-        
+
         leaveParser("and test");
         return aat;
     }
@@ -35,10 +34,9 @@ class AspAndTest extends AspSyntax {
         // -- Must be changed in part 2:
         notTests.get(0).prettyPrint();
         for(int i = 1; i < notTests.size(); i++){
-            prettyWrite(andList.get(i-1));
+            prettyWrite(andList.get(i-1)); 
             notTests.get(i).prettyPrint();
         }
-
     }
 
     @Override

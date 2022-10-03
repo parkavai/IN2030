@@ -34,7 +34,7 @@ public class AspAssignment extends AspSmallStmt {
             }
         }
 
-        skip(s, equalToken);
+        skip(s, equalToken); 
         assignment.expr = AspExpr.parse(s);
 
         leaveParser("assignment");

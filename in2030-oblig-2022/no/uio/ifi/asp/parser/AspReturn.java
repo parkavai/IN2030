@@ -15,8 +15,7 @@ public class AspReturn extends AspSmallStmt{
     static AspReturn parse(Scanner s){
         enterParser("return stmt");
         
-        AspReturn returnStmt= new AspReturn(s.curLineNum());
-        skip(s, returnToken);
+        AspReturn returnStmt= new AspReturn(s.curLineNum()); skip(s, returnToken);
         returnStmt.expr = AspExpr.parse(s);
 
         leaveParser("return stmt");
