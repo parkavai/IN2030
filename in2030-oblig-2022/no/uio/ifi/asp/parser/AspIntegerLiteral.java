@@ -19,7 +19,7 @@ public class AspIntegerLiteral extends AspAtom {
         AspIntegerLiteral integer = new AspIntegerLiteral(s.curLineNum());
         String value = String.valueOf(s.curToken().stringLit);
         if(value.charAt(0) == '0' && value.length() > 1){
-            parserError("Asp only accepts integer values \'0\'' or every other number!", s.curLineNum());
+            parserError("Asp only accepts integer values \'0\' or every other number!", s.curLineNum());
         }
         else{
             integer.intValue = s.curToken().integerLit;

@@ -17,7 +17,6 @@ public class AspStringLiteral extends AspAtom {
 
         AspStringLiteral string_literal = new AspStringLiteral(s.curLineNum());
         string_literal.string = s.curToken().stringLit; 
-        String check = string_literal.string;
         // Must propably solve issue in where you have to check if string ends with " or ', If not then we write an error
         // String not terminated
         /* 

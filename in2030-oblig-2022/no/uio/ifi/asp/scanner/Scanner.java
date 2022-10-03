@@ -212,7 +212,7 @@ public class Scanner {
 					if(c == '\''){
 						isDoubleQuotation = false;
 					} 
-					int end = stringIteration(line, start, isDoubleQuotation);
+					int end = stringIteration(line, start, isDoubleQuotation, curLineNum());
 					start += 1;
 					String str = line.substring(start, end);
 					pointer = new Token(TokenKind.stringToken, curLineNum());
@@ -385,7 +385,7 @@ public class Scanner {
 	 * @param index
 	 * @return index
 	 */
-	private int stringIteration(String line, int index, boolean isDoubleQuotation){
+	private int stringIteration(String line, int index, boolean isDoubleQuotation, int curLineNum){
 		int length = line.length();
 		index ++;
         while (index < length){
@@ -402,6 +402,9 @@ public class Scanner {
 			}
             index++;
         }
+		if((line.charAt(index) != '\'' && index == line.length()) || (line.charAt(index) != '\"' && index == line.length())){
+			scannerError("String line is not terminated!", curLineNum);
+		}
         return index;
 	}
 

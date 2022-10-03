@@ -1,4 +1,3 @@
-<program>
    1: # Dette programmet inneholder ulike former for blanke linjer,
    2: # dvs tomme linjer eller linjer med blanke eller TAB-er i ulike posisjoner.
    3: # Dette skal Asp-interpreten kunne håndtere.
@@ -10,140 +9,31 @@
    9: # Denne linjen starter med en TAB:
   10: 	
   11: if 1+1 != 2:
-  <stmt>
-    <compound stmt>
-      <if stmt>
-        <expr>
-          <and test>
-            <not test>
-              <comparison>
-                <term>
-                  <factor>
-                    <primary>
-                      <atom>
-                        <integer literal>
-                        </integerliteral>
-                      </atom>
-                    </primary>
-                  </factor>
-                  <term opr>
-                  </term opr>
-                  <factor>
-                    <primary>
-                      <atom>
-                        <integer literal>
-                        </integerliteral>
-                      </atom>
-                    </primary>
-                  </factor>
-                </term>
-                <comp opr>
-                </comp opr>
-                <term>
-                  <factor>
-                    <primary>
-                      <atom>
-                        <integer literal>
-                        </integerliteral>
-                      </atom>
-                    </primary>
-                  </factor>
-                </term>
-              </comparison>
-            </not test>
-          </and test>
-        </expr>
-        <suite>
+Scanner: if token on line 11
+Scanner: integer literal token on line 11: 1
+Scanner: + token on line 11
+Scanner: integer literal token on line 11: 1
+Scanner: != token
+Scanner: integer literal token on line 11: 2
+Scanner: : token on line 11
+Scanner: NEWLINE token on line 11
   12: # Denne linjen starter med 2 TAB-er og 3 blanke:
   13: 		   print("Ja")
-          <stmt>
-            <small stmt list>
-              <small stmt>
-                <expr stmt>
-                  <expr>
-                    <and test>
-                      <not test>
-                        <comparison>
-                          <term>
-                            <factor>
-                              <primary>
-                                <atom>
-                                  <name>
-                                  </name>
-                                </atom>
-                                <primary suffix>
-                                  <arguments>
-                                    <expr>
-                                      <and test>
-                                        <not test>
-                                          <comparison>
-                                            <term>
-                                              <factor>
-                                                <primary>
-                                                  <atom>
-                                                    <string literal>
-                                                    </string literal>
-                                                  </atom>
-                                                </primary>
-                                              </factor>
-                                            </term>
-                                          </comparison>
-                                        </not test>
-                                      </and test>
-                                    </expr>
-                                  </arguments>
-                                </primary suffix>
-                              </primary>
-                            </factor>
-                          </term>
-                        </comparison>
-                      </not test>
-                    </and test>
-                  </expr>
-                </expr stmt>
-              </small stmt>
-            </small stmt list>
-          </stmt>
+Scanner: INDENT token on line 13
+Scanner: name token on line 13: print
+Scanner: ( token on line 13
+Scanner: string literal token on line 13: "Ja"
+Scanner: ) token on line 13
+Scanner: NEWLINE token on line 13
   14: # Denne linjen inneholder et utplukk blanke og TAB-er:
   15: 	 		   	
   16: # Og det var alt.
   17: # Siste linje mangler LF som linjeslutt, men slikt skal skanneren kunne takle.
   18: # Skanneren skal generere et NEWLINE-symbol uansett.
   19: x = 4
-        </suite>
-      </if stmt>
-    </compund stmt>
-  </stmt>
-  <stmt>
-    <small stmt list>
-      <small stmt>
-        <assignment>
-          <name>
-          </name>
-          <expr>
-            <and test>
-              <not test>
-                <comparison>
-                  <term>
-                    <factor>
-                      <primary>
-                        <atom>
-                          <integer literal>
-                          </integerliteral>
-                        </atom>
-                      </primary>
-                    </factor>
-                  </term>
-                </comparison>
-              </not test>
-            </and test>
-          </expr>
-        </assignment>
-      </small stmt>
-    </small stmt list>
-  </stmt>
-</program>
-
-if 1 + 1!= 2:
-  print(" Ja ") 
-    x = 4
+Scanner: DEDENT token on line 19
+Scanner: name token on line 19: x
+Scanner: = token on line 19
+Scanner: integer literal token on line 19: 4
+Scanner: NEWLINE token on line 19
+Scanner: E-o-f token
