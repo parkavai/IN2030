@@ -10,6 +10,7 @@ public class AspDictDisplay extends AspAtom{
     ArrayList<AspStringLiteral> strList = new ArrayList<>();
     ArrayList<AspExpr> exprList = new ArrayList<>();
     Boolean isString = false;
+    ArrayList<String> commaList = new ArrayList<>();
 
     AspDictDisplay(int n){
         super(n);
@@ -34,6 +35,8 @@ public class AspDictDisplay extends AspAtom{
                 skip(s, colonToken);
                 dictDisp.exprList.add(AspExpr.parse(s));
                 if(s.curToken().kind != commaToken) break; 
+                skip(s, commaToken);
+                dictDisp.commaList.add(", ");
             }
         }
         skip(s, TokenKind.rightBraceToken); // Skip past the second parenthesis ')'
@@ -47,13 +50,13 @@ public class AspDictDisplay extends AspAtom{
         // -- Must be changed in part 2:
         prettyWrite("{");
         if(isString){
-            strList.get(0).prettyPrint();
-            prettyWrite(":");
-            for(int i = 1; i < strList.size(); i++){
-                prettyWrite(":");
-                exprList.get(i-1).prettyPrint();
-                prettyWrite(", ");
+            for(int i = 0; i < strList.size(); i++){
                 strList.get(i).prettyPrint();
+                prettyWrite(":");
+                exprList.get(i).prettyPrint();
+                if(i < commaList.size()){
+                    prettyWrite(commaList.get(i));
+                }
             }
         }
         prettyWrite("}");
