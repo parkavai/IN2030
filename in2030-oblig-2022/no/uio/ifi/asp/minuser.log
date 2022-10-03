@@ -19,7 +19,7 @@
                       <primary>
                         <atom>
                           <integer literal>
-                          </integerliteral>
+                          </integer literal>
                         </atom>
                       </primary>
                     </factor>
@@ -48,7 +48,7 @@
                       <primary>
                         <atom>
                           <integer literal>
-                          </integerliteral>
+                          </integer literal>
                         </atom>
                       </primary>
                     </factor>
@@ -103,7 +103,7 @@
                       <primary>
                         <atom>
                           <integer literal>
-                          </integerliteral>
+                          </integer literal>
                         </atom>
                       </primary>
                     </factor>
@@ -252,7 +252,7 @@
                                         <primary>
                                           <atom>
                                             <integer literal>
-                                            </integerliteral>
+                                            </integer literal>
                                           </atom>
                                         </primary>
                                       </factor>
@@ -328,6 +328,6 @@
 a = 1
 b = 2
 v = - a - - b - - 1
-print(v) 
+print(v)
 w = (- a) - (- b) - (- 1)
-print(w) 
+print(w)

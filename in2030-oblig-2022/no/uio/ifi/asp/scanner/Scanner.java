@@ -212,9 +212,15 @@ public class Scanner {
 					if(c == '\''){
 						isDoubleQuotation = false;
 					} 
-					int end = stringIteration(line, start, isDoubleQuotation, curLineNum());
+					int end = stringIteration(line, start, isDoubleQuotation);
 					start += 1;
-					String str = line.substring(start, end);
+					String str = line.substring(start, end);;
+					if(!isDoubleQuotation){
+						str = "\'" + str +  "\'";
+					}
+					else{
+						str = "\"" + str +  "\"";
+					}
 					pointer = new Token(TokenKind.stringToken, curLineNum());
 					pointer.stringLit = str;
 					i = end;
@@ -385,13 +391,13 @@ public class Scanner {
 	 * @param index
 	 * @return index
 	 */
-	private int stringIteration(String line, int index, boolean isDoubleQuotation, int curLineNum){
+	private int stringIteration(String line, int index, boolean isDoubleQuotation){
 		int length = line.length();
 		index ++;
         while (index < length){
 			char c = line.charAt(index);
 			if(isDoubleQuotation){
-				if(c == '"'){
+				if(c == '\"'){
 					break;
 				}
 			}
@@ -400,10 +406,10 @@ public class Scanner {
 					break;
 				}
 			}
-            index++;
+            index ++;
         }
-		if((line.charAt(index) != '\'' && index == line.length()) || (line.charAt(index) != '\"' && index == line.length())){
-			scannerError("String line is not terminated!", curLineNum);
+		if(index == length){
+			scannerError("String line is not terminated!");	
 		}
         return index;
 	}

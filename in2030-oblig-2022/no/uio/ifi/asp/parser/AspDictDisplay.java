@@ -31,7 +31,6 @@ public class AspDictDisplay extends AspAtom{
             // There is  a string literal
             while(true){
                 dictDisp.strList.add(AspStringLiteral.parse(s));
-                // Must you check if there is a ":" token?
                 skip(s, colonToken);
                 dictDisp.exprList.add(AspExpr.parse(s));
                 if(s.curToken().kind != commaToken) break; 
@@ -46,18 +45,18 @@ public class AspDictDisplay extends AspAtom{
     @Override
     public void prettyPrint() {
         // -- Must be changed in part 2:
-        prettyWrite("{ ");
+        prettyWrite("{");
         if(isString){
             strList.get(0).prettyPrint();
-            prettyWrite(": ");
+            prettyWrite(":");
             for(int i = 1; i < strList.size(); i++){
-                System.out.print(": ");
+                System.out.print(":");
                 exprList.get(i-1).prettyPrint();
                 System.out.print(", ");
                 strList.get(i).prettyPrint();
             }
         }
-        prettyWrite("} ");
+        prettyWrite("}");
     }
 
     @Override

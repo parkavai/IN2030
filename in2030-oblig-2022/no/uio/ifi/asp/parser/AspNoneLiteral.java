@@ -12,7 +12,6 @@ public class AspNoneLiteral extends AspAtom {
         super(n);
     }
     
-    // Er det nødvendig å lage en none klasse, når du heller kan "skip(s, noneToken)" i Atom?
     static AspNoneLiteral parse(Scanner s){
         enterParser("none literal");
 

@@ -102,7 +102,7 @@
                                                       <primary>
                                                         <atom>
                                                           <integer literal>
-                                                          </integerliteral>
+                                                          </integer literal>
                                                         </atom>
                                                       </primary>
                                                     </factor>
@@ -197,7 +197,7 @@
                                                               <primary>
                                                                 <atom>
                                                                   <integer literal>
-                                                                  </integerliteral>
+                                                                  </integer literal>
                                                                 </atom>
                                                               </primary>
                                                             </factor>
@@ -289,7 +289,7 @@
                                                                         <primary>
                                                                           <atom>
                                                                             <integer literal>
-                                                                            </integerliteral>
+                                                                            </integer literal>
                                                                           </atom>
                                                                         </primary>
                                                                       </factor>
@@ -333,7 +333,7 @@
                                                         <primary>
                                                           <atom>
                                                             <integer literal>
-                                                            </integerliteral>
+                                                            </integer literal>
                                                           </atom>
                                                         </primary>
                                                       </factor>
@@ -457,7 +457,7 @@
                                                       <primary>
                                                         <atom>
                                                           <integer literal>
-                                                          </integerliteral>
+                                                          </integer literal>
                                                         </atom>
                                                       </primary>
                                                     </factor>
@@ -542,7 +542,7 @@
                                             <primary>
                                               <atom>
                                                 <integer literal>
-                                                </integerliteral>
+                                                </integer literal>
                                               </atom>
                                             </primary>
                                           </factor>
@@ -592,7 +592,7 @@
                                         <primary>
                                           <atom>
                                             <integer literal>
-                                            </integerliteral>
+                                            </integer literal>
                                           </atom>
                                         </primary>
                                       </factor>
@@ -610,7 +610,7 @@
                                         <primary>
                                           <atom>
                                             <integer literal>
-                                            </integerliteral>
+                                            </integer literal>
                                           </atom>
                                         </primary>
                                       </factor>
@@ -630,7 +630,7 @@
                                         <primary>
                                           <atom>
                                             <integer literal>
-                                            </integerliteral>
+                                            </integer literal>
                                           </atom>
                                         </primary>
                                       </factor>
@@ -648,7 +648,7 @@
                                         <primary>
                                           <atom>
                                             <integer literal>
-                                            </integerliteral>
+                                            </integer literal>
                                           </atom>
                                         </primary>
                                       </factor>
@@ -666,7 +666,7 @@
                                         <primary>
                                           <atom>
                                             <integer literal>
-                                            </integerliteral>
+                                            </integer literal>
                                           </atom>
                                         </primary>
                                       </factor>
@@ -684,7 +684,7 @@
                                         <primary>
                                           <atom>
                                             <integer literal>
-                                            </integerliteral>
+                                            </integer literal>
                                           </atom>
                                         </primary>
                                       </factor>
@@ -702,7 +702,7 @@
                                         <primary>
                                           <atom>
                                             <integer literal>
-                                            </integerliteral>
+                                            </integer literal>
                                           </atom>
                                         </primary>
                                       </factor>
@@ -740,7 +740,7 @@
                       <primary>
                         <atom>
                           <integer literal>
-                          </integerliteral>
+                          </integer literal>
                         </atom>
                       </primary>
                     </factor>
@@ -907,17 +907,17 @@
   </stmt>
 </program>
 
-def boblesorter(a, ):
+def boblesorter (a):
   global ombyttinger
-  while true:
-    endret = false
-    for i in range(1, len(a) ) :
-      if a[i - 1] > a[i] :
-        t = a[i - 1] a[i - 1]  = a[i] ;a[i]  = t;
+  while True:
+    endret = False
+    for i in range(1, len(a)):
+      if a[i - 1]  > a[i] :
+        t = a[i - 1] a[i - 1]  = a[i] ; a[i]  = t; 
         ombyttinger = ombyttinger + 1
-        endret = true
-    if  not endret:return 0
-data = [3,17,- 3,0,3,1,12,]
+        endret = True
+    if not endret:return 0
+data = [3, 17, - 3, 0, 3, 1, 12, ]
 ombyttinger = 0
-boblesorter(data) 
-print("Resultatet etter", ombyttinger, "ombyttinger er", data) 
+boblesorter(data)
+print("Resultatet etter", ombyttinger, "ombyttinger er", data)

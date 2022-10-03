@@ -47,11 +47,11 @@ public class AspSmallStmtList extends AspStmt {
         if(smallStmt.size() > 1){
             for(int i = 1; i < smallStmt.size(); i++){
                 smallStmt.get(i).prettyPrint();
-                prettyWrite(";");
+                prettyWrite("; ");
             }
         }
         if(isEndSemi){
-            prettyWrite(";");
+            prettyWrite("; ");
         }
         prettyWriteLn();
     }

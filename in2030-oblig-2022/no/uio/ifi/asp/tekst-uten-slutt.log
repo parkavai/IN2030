@@ -18,4 +18,47 @@
                       <primary>
                         <atom>
                           <string literal>
-Asp parser error on line 4: String literal not terminated!
+                          </string literal>
+                        </atom>
+                      </primary>
+                    </factor>
+                  </term>
+                </comparison>
+              </not test>
+            </and test>
+          </expr>
+        </assignment>
+      </small stmt>
+    </small stmt list>
+  </stmt>
+   5: t2 = 'Denne også'
+  <stmt>
+    <small stmt list>
+      <small stmt>
+        <assignment>
+          <name>
+          </name>
+          <expr>
+            <and test>
+              <not test>
+                <comparison>
+                  <term>
+                    <factor>
+                      <primary>
+                        <atom>
+                          <string literal>
+                          </string literal>
+                        </atom>
+                      </primary>
+                    </factor>
+                  </term>
+                </comparison>
+              </not test>
+            </and test>
+          </expr>
+        </assignment>
+      </small stmt>
+    </small stmt list>
+  </stmt>
+   6: t3 = 'Denne starter her
+Asp scanner error on line 6: String line is not terminated!

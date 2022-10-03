@@ -15,21 +15,12 @@ public class AspStringLiteral extends AspAtom {
     static AspStringLiteral parse(Scanner s){
         enterParser("string literal");
 
-        AspStringLiteral string_literal = new AspStringLiteral(s.curLineNum());
-        string_literal.string = s.curToken().stringLit; 
-        // Must propably solve issue in where you have to check if string ends with " or ', If not then we write an error
-        // String not terminated
-        /* 
-        if(string_literal.string != ""){
-            if(check.charAt(check.length() - 1) != '\'' || check.charAt(check.length() - 1) != '\"' ){
-                parserError("String literal not terminated!", s.curLineNum());
-            }
-        }
-        */
+        AspStringLiteral stringLiteral = new AspStringLiteral(s.curLineNum());
+        stringLiteral.string = s.curToken().stringLit; 
         skip(s, stringToken);
 
         leaveParser("string literal");
-        return string_literal;
+        return stringLiteral;
     }
 
     @Override
@@ -38,12 +29,7 @@ public class AspStringLiteral extends AspAtom {
         if(string.isEmpty()){
             prettyWrite(string);
         }
-        else if(string.charAt(0) == '\''){
-            prettyWrite("\'" + string + "\'");
-        }
-        else{
-            prettyWrite("\"" + string + "\"");
-        }
+        prettyWrite(string);
     }
 
     @Override

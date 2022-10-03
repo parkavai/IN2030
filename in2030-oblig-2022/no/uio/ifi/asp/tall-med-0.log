@@ -47,4 +47,4 @@
                       <primary>
                         <atom>
                           <integer literal>
-Asp parser error on line 5: Asp only accepts integer values '0'' or every other number, not '4'!
+Asp parser error on line 5: Asp only accepts integer values '0' or every other number!

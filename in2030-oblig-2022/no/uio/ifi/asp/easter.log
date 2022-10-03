@@ -1252,7 +1252,7 @@
 </program>
 
 y = 2021
-while y<= 2025:
+while y <= 2025:
   a = y % 19
   b = y // 100
   c = y % 100
@@ -1267,8 +1267,8 @@ while y<= 2025:
   m = (a + 11 * h + 22 * l) // 451
   month = (h + l - 7 * m + 114) // 31
   day = (h + l - 7 * m + 114) % 31 + 1
-  if month== 3:
-    print(str(day)  + ". mars", y) 
+  if month == 3:
+    print(str(day) + ". mars", y)
   else:
-    print(str(day)  + ". april", y) 
+    print(str(day) + ". april", y)
   y = y + 1

@@ -43,7 +43,6 @@ public class AspSuite extends AspSyntax {
             smallStmtList.prettyPrint();
         }
         else{
-            // Må kanskje skrive prettyWriteLn siden vi har en newline her
             prettyWriteLn();
             prettyIndent();
             if(stmt.size() > 1){

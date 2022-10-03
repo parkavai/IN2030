@@ -18,10 +18,10 @@ class AspFactorPrefix extends AspSyntax {
         enterParser("factor prefix");
         AspFactorPrefix factPrefix = new AspFactorPrefix(s.curLineNum());
         if(s.curToken().kind == plusToken){
-            skip(s, plusToken); factPrefix.value = " + ";
+            skip(s, plusToken); factPrefix.value = "+ ";
         }
         else{
-            skip(s, minusToken); factPrefix.value = " - ";
+            skip(s, minusToken); factPrefix.value = "- ";
         }
         
         leaveParser("factor prefix");

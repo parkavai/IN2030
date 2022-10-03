@@ -22,7 +22,6 @@ class AspComparison extends AspSyntax {
         while (true) {
             comp.terms.add(AspTerm.parse(s));
             if (!s.isCompOpr()) break;
-            // Must propably have a variable which represents one of the tokens above
             comp.compList.add(AspCompOpr.parse(s));
         }
     

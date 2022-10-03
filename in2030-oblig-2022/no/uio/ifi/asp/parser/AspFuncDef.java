@@ -9,7 +9,7 @@ import static no.uio.ifi.asp.scanner.TokenKind.*;
 public class AspFuncDef extends AspCompoundStmt {
     ArrayList<AspName> nameList = new ArrayList<>();
     AspSuite suite;
-
+    ArrayList<String> commaList = new ArrayList<>();
 
     AspFuncDef(int n){
         super(n);
@@ -28,6 +28,7 @@ public class AspFuncDef extends AspCompoundStmt {
                 func.nameList.add(AspName.parse(s));
                 if(s.curToken().kind != commaToken) break;
                 skip(s, commaToken);
+                func.commaList.add(", ");
             }
         }
 
@@ -41,16 +42,18 @@ public class AspFuncDef extends AspCompoundStmt {
     @Override
     public void prettyPrint() {
         // -- Must be changed in part 2:
-        prettyWrite("def "); nameList.get(0).prettyPrint();
-        prettyWrite("(");
+        prettyWrite("def "); nameList.get(0).prettyPrint(); prettyWrite(" (");
+        int commaAmount = 0;
         if(nameList.size() > 1){
             for(int i = 1; i < nameList.size(); i++){
                 nameList.get(i).prettyPrint();
-                prettyWrite(", ");
+                if(commaAmount < commaList.size()){
+                    prettyWrite(commaList.get(commaAmount));
+                    commaAmount += 1;
+                }
             }
         }
-        prettyWrite(")");
-        prettyWrite(":");
+        prettyWrite(")"); prettyWrite(":");
         suite.prettyPrint();
     }
 

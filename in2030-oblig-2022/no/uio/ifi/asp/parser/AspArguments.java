@@ -48,7 +48,7 @@ public class AspArguments extends AspAtom{
                 expression.get(i).prettyPrint();
             }   
         }
-        prettyWrite(") ");
+        prettyWrite(")");
     }
 
     @Override
