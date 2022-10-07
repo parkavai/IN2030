@@ -5,7 +5,7 @@ import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
-public class AspStmt extends AspSyntax {
+abstract class AspStmt extends AspSyntax {
     AspSmallStmtList smallStmtList;
     AspCompoundStmt compoundStmt;
     Boolean isSmall = false;
@@ -17,7 +17,7 @@ public class AspStmt extends AspSyntax {
     static AspStmt parse(Scanner s){
         enterParser("stmt");
         
-        AspStmt ss = new AspStmt(s.curLineNum());
+        AspStmt ss = null;
         switch (s.curToken().kind) {
             // First check if it is small stmt
             case nameToken:

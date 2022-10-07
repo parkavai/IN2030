@@ -7,7 +7,8 @@ import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspBooleanLiteral extends AspAtom {
-    String boolValue;
+    Boolean value;
+    String printValue;
 
     AspBooleanLiteral(int n){
         super(n);
@@ -18,10 +19,10 @@ public class AspBooleanLiteral extends AspAtom {
 
         AspBooleanLiteral bool = new AspBooleanLiteral(s.curLineNum());
         if(s.curToken().kind == trueToken){
-            bool.boolValue = "True"; skip(s, trueToken);
+            bool.printValue = "True"; bool.value = true; skip(s, trueToken);
         }
         else{
-            bool.boolValue = "False"; skip(s, falseToken);
+            bool.printValue = "False"; bool.value = false; skip(s, falseToken);
         }
         
         // skip(s, s.curToken().kind);
@@ -32,13 +33,13 @@ public class AspBooleanLiteral extends AspAtom {
     @Override
     public void prettyPrint() {
         // -- Must be changed in part 2:
-        prettyWrite(boolValue);
+        prettyWrite(printValue);
     }
 
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         // -- Must be changed in part 4:
-        return null;
+        return new RuntimeBoolValue(value);
     }
 }
 

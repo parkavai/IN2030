@@ -6,7 +6,7 @@ import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
-public class AspPrimarySuffix extends AspSyntax {
+abstract AspPrimarySuffix extends AspSyntax {
     AspArguments argument;
     AspSubscription subscription;
     Boolean isArgument = false;
@@ -18,7 +18,7 @@ public class AspPrimarySuffix extends AspSyntax {
     static AspPrimarySuffix parse(Scanner s){
         enterParser("primary suffix");
 
-        AspPrimarySuffix primarySuffix = new AspPrimarySuffix(s.curLineNum());
+        AspPrimarySuffix primarySuffix = null;
         if(s.curToken().kind == leftParToken){
             primarySuffix.isArgument = true; 
             primarySuffix.argument = AspArguments.parse(s);
