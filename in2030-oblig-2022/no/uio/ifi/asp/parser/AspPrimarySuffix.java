@@ -6,11 +6,8 @@ import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
-abstract AspPrimarySuffix extends AspSyntax {
-    AspArguments argument;
-    AspSubscription subscription;
-    Boolean isArgument = false;
-    
+abstract class AspPrimarySuffix extends AspSyntax {
+
     AspPrimarySuffix(int n){
         super(n);
     }
@@ -20,31 +17,14 @@ abstract AspPrimarySuffix extends AspSyntax {
 
         AspPrimarySuffix primarySuffix = null;
         if(s.curToken().kind == leftParToken){
-            primarySuffix.isArgument = true; 
-            primarySuffix.argument = AspArguments.parse(s);
+            primarySuffix = AspArguments.parse(s);
         }
         else{
-            primarySuffix.subscription = AspSubscription.parse(s);
+            primarySuffix = AspSubscription.parse(s);
         }
 
         leaveParser("primary suffix");
         return primarySuffix;
     }
 
-    @Override
-    public void prettyPrint() {
-        // -- Must be changed in part 2:
-        if(isArgument){
-            argument.prettyPrint();
-        }
-        else{
-            subscription.prettyPrint();
-        }
-    }
-
-    @Override
-    public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // -- Must be changed in part 4:
-        return null;
-    }
 }

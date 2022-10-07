@@ -6,7 +6,7 @@ import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
-public class AspArguments extends AspAtom{
+public class AspArguments extends AspPrimarySuffix{
     ArrayList<AspExpr> expression = new ArrayList<>();
     ArrayList<String> stringList = new ArrayList<>();
     Boolean isExpr = false;

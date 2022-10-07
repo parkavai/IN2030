@@ -6,7 +6,7 @@ import no.uio.ifi.asp.parser.AspSyntax;
 public class RuntimeIntValue extends RuntimeValue {
     Integer intValue;
 
-    public RuntimeIntValue(boolean v) {
+    public RuntimeIntValue(Integer v) {
         intValue = v;
     }
 
@@ -17,8 +17,8 @@ public class RuntimeIntValue extends RuntimeValue {
 
     @Override
     public String toString() {
-        return (Integer.toString(intvalue));
+        return "value";
     }
-    
+
 
 }

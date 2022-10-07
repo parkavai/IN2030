@@ -6,7 +6,7 @@ import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
-abstract class AspCompoundStmt extends AspSyntax{
+abstract class AspCompoundStmt extends AspStmt{
 
     AspCompoundStmt(int n){
         super(n);

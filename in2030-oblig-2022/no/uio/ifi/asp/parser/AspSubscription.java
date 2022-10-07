@@ -5,7 +5,7 @@ import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
-public class AspSubscription extends AspSyntax{
+public class AspSubscription extends AspPrimarySuffix{
     AspExpr expr;
 
     AspSubscription(int n){
