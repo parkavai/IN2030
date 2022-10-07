@@ -1,24 +1,20 @@
 package no.uio.ifi.asp.runtime;
 
-import no.uio.ifi.asp.main.*;
-import no.uio.ifi.asp.parser.AspSyntax;
-
 public class RuntimeIntValue extends RuntimeValue {
-    Integer intValue;
+    Long intValue;
 
-    public RuntimeIntValue(Integer v) {
+    public RuntimeIntValue(Long v) {
         intValue = v;
     }
 
     @Override
     String typeName() {
-        return "integer";
+        return "int";
     }
 
     @Override
     public String toString() {
-        return "value";
+        return String.valueOf(intValue);
     }
-
 
 }
