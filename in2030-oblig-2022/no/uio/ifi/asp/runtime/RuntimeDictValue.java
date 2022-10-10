@@ -16,11 +16,20 @@ public class RuntimeDictValue extends RuntimeValue {
         return "dict";
     }
 
-    @Override
-    public String toString() {
+    @Override 
+    public String showInfo(){
         String prettyString = "";
         for(RuntimeValue v: runTimeDict.values()){
             prettyString += v.toString();
+        }
+        return prettyString;
+    }
+
+    @Override
+    public String toString() {
+        String prettyString = "{";
+        for(String keys: runTimeDict.keySet()){
+            prettyString += keys; prettyString += ": "; prettyString += runTimeDict.get(keys);
         }
         return prettyString;
     }

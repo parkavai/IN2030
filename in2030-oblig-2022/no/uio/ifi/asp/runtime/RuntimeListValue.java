@@ -16,6 +16,15 @@ public class RuntimeListValue extends RuntimeValue {
     }
 
     @Override
+    public String showInfo(){
+        String showString = "";
+        for(RuntimeValue v: runTimeList){
+            showString += v.toString();
+        }
+        return showString;
+    }
+
+    @Override
     public String toString() {
         String prettyString = "[";
         for(int i = 0; i < runTimeList.size(); i++){
