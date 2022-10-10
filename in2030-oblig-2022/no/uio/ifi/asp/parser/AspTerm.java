@@ -37,10 +37,23 @@ class AspTerm extends AspSyntax {
             factors.get(i).prettyPrint();
         }
     }
-
+    
+    // Copied from Dag Langmyhr: https://screencast.uninett.no/relay/ansatt/daguio.no/2019/17.10/2746600/IN2030-42-1_-_20191017_110157_39.html
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         // -- Must be changed in part 4:
-        return null;
+        RuntimeValue v = factors.get(0).eval(curScope);
+        for (int i = 1; i < factors.size(); ++i) {
+            TokenKind k = termOprList.get(i-1).kind;
+            switch (k) {
+            case minusToken:
+            v = v.evalSubtract(factors.get(i).eval(curScope), this); break;
+            case plusToken:
+            v = v.evalAdd(factors.get(i).eval(curScope), this); break;
+            default:
+            Main.panic("Illegal term operator: " + k + "!");
+            }
+        }
+        return v;
     }
 }

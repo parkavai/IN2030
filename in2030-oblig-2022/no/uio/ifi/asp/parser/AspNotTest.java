@@ -37,9 +37,15 @@ class AspNotTest extends AspSyntax {
         comp.prettyPrint();
     }
 
+    // Copied from Dag Langmyhr: https://screencast.uninett.no/relay/ansatt/daguio.no/2019/17.10/2746600/IN2030-42-1_-_20191017_110157_39.html
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         // -- Must be changed in part 4:
-        return null;
+        RuntimeValue v = comp.eval(curScope);
+        if(isNot){
+
+            v = v.evalNot(this);
+        }
+        return v;
     }
 }
