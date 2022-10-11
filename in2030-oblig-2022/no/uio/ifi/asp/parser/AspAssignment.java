@@ -58,6 +58,13 @@ public class AspAssignment extends AspSmallStmt {
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         // -- Must be changed in part 4:
-        return null;
+        RuntimeValue v = name.eval(curScope);
+        if(isSubscription){
+            for(int i = 0; i < subs.size(); i++){
+                v.evalSubscription(subs.get(i).eval(curScope), this);
+            }
+            // Must assign element here but must be done in part 4 i think?
+        }
+        return v;
     }
 }

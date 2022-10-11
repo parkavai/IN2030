@@ -8,6 +8,7 @@ import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspListDisplay extends AspAtom {
     ArrayList<AspExpr> expr = new ArrayList<>();
+    Boolean isExpr = false;
 
     AspListDisplay(int n){
         super(n);
@@ -19,6 +20,7 @@ public class AspListDisplay extends AspAtom {
         AspListDisplay listDisplay = new AspListDisplay(s.curLineNum()); skip(s, leftBracketToken);
 
         if(s.curToken().kind != rightBracketToken){
+            listDisplay.isExpr = true;
             while(true){
                 listDisplay.expr.add(AspExpr.parse(s));
                 if(s.curToken().kind != commaToken) break;
@@ -47,6 +49,13 @@ public class AspListDisplay extends AspAtom {
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         // -- Must be changed in part 4:
-        return null;
+        if(isExpr){
+            ArrayList<RuntimeValue> v = new ArrayList<>();
+            for(int i = 0; i < expr.size(); i++){
+                v.add(expr.get(i).eval(curScope));
+            }
+            return new RuntimeListValue(v);
+        }
+        return null; 
     }
 }

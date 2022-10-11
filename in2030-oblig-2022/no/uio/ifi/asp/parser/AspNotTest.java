@@ -43,7 +43,6 @@ class AspNotTest extends AspSyntax {
         // -- Must be changed in part 4:
         RuntimeValue v = comp.eval(curScope);
         if(isNot){
-
             v = v.evalNot(this);
         }
         return v;
