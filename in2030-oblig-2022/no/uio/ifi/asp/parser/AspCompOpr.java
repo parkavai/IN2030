@@ -8,6 +8,7 @@ import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 class AspCompOpr extends AspSyntax {
     String value;
+    TokenKind kind; 
 
     AspCompOpr(int n) {
         super(n);
@@ -19,22 +20,22 @@ class AspCompOpr extends AspSyntax {
         AspCompOpr compOpr = new AspCompOpr(s.curLineNum());
 
         if(s.curToken().kind == lessToken){
-            skip(s, lessToken); compOpr.value = " < ";
+            skip(s, lessToken); compOpr.value = " < "; compOpr.kind = lessToken;
         }
         else if(s.curToken().kind == greaterToken){
-            skip(s, greaterToken); compOpr.value = " > ";
+            skip(s, greaterToken); compOpr.value = " > "; compOpr.kind = greaterToken;
         }
         else if(s.curToken().kind == doubleEqualToken){
-            skip(s, doubleEqualToken); compOpr.value = " == ";
+            skip(s, doubleEqualToken); compOpr.value = " == "; compOpr.kind = doubleEqualToken;
         }
         else if(s.curToken().kind == greaterEqualToken){
-            skip(s, greaterEqualToken); compOpr.value = " >= ";
+            skip(s, greaterEqualToken); compOpr.value = " >= "; compOpr.kind = greaterEqualToken;
         }
         else if(s.curToken().kind == lessEqualToken){
-            skip(s, lessEqualToken); compOpr.value = " <= ";
+            skip(s, lessEqualToken); compOpr.value = " <= "; compOpr.kind = lessEqualToken;
         }
         else {
-            skip(s, notEqualToken); compOpr.value = " != ";
+            skip(s, notEqualToken); compOpr.value = " != "; compOpr.kind = notEqualToken;
         }
         
         leaveParser("comp opr");

@@ -46,12 +46,12 @@ class AspTerm extends AspSyntax {
         for (int i = 1; i < factors.size(); ++i) {
             TokenKind k = termOprList.get(i-1).kind;
             switch (k) {
-            case minusToken:
-            v = v.evalSubtract(factors.get(i).eval(curScope), this); break;
-            case plusToken:
-            v = v.evalAdd(factors.get(i).eval(curScope), this); break;
+                case minusToken:
+                    v = v.evalSubtract(factors.get(i).eval(curScope), this); break;
+                case plusToken:
+                    v = v.evalAdd(factors.get(i).eval(curScope), this); break;
             default:
-            Main.panic("Illegal term operator: " + k + "!");
+                Main.panic("Illegal term operator: " + k + "!");
             }
         }
         return v;

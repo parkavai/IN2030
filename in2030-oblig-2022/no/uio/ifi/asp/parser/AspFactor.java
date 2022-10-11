@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import no.uio.ifi.asp.main.*;
 import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
-import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 class AspFactor extends AspSyntax {
     ArrayList<AspPrimary> primaryList = new ArrayList<>();
@@ -50,6 +49,46 @@ class AspFactor extends AspSyntax {
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         // -- Must be changed in part 4:
-        return null;
+        RuntimeValue v = primaryList.get(0).eval(curScope);
+        TokenKind k;
+        if(factorPrefixList.size() > 0){
+            k = factorPrefixList.get(0).kind;
+            switch (k){
+                case plusToken:
+                    v = v.evalPositive(this);
+                case minusToken:
+                    v = v.evalNegate(this);
+                default:
+                    Main.panic("Illegal factorPrefix operator: " + k + "!");
+            }
+        }
+        for(int i = 1; i < primaryList.size(); i++){
+            k = factorOprList.get(i-1).kind;
+            switch (k) {
+                case astToken:
+                    v = v.evalModulo(v, this); break; 
+                case slashToken:
+                    v = v.evalDivide(v, this); break;
+                case percentToken:
+                    v = v.evalModulo(v, this); break; 
+                case doubleSlashToken:
+                    v = v.evalIntDivide(v, this); break;
+                default:
+                    Main.panic("Illegal factor operator: " + k + "!");
+            }
+            v = primaryList.get(i).eval(curScope);
+            if(factorPrefixList.get(i) != null){
+                k = factorPrefixList.get(i).kind;
+                switch (k) {
+                    case plusToken:
+                        v = v.evalPositive(this);
+                    case minusToken:
+                        v = v.evalNegate(this);
+                    default:
+                        Main.panic("Illegal factorPrefix operator: " + k + "!");
+                }
+            }
+        }
+        return v; 
     }
 }
