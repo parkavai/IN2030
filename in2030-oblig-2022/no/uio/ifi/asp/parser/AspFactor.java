@@ -55,9 +55,9 @@ class AspFactor extends AspSyntax {
             k = factorPrefixList.get(0).kind;
             switch (k){
                 case plusToken:
-                    v = v.evalPositive(this);
+                    v = v.evalPositive(this); break;
                 case minusToken:
-                    v = v.evalNegate(this);
+                    v = v.evalNegate(this); break;
                 default:
                     Main.panic("Illegal factorPrefix operator: " + k + "!");
             }
@@ -77,13 +77,13 @@ class AspFactor extends AspSyntax {
                     Main.panic("Illegal factor operator: " + k + "!");
             }
             v = primaryList.get(i).eval(curScope);
-            if(factorPrefixList.get(i) != null){
+            if(i < factorPrefixList.size()){
                 k = factorPrefixList.get(i).kind;
                 switch (k) {
                     case plusToken:
-                        v = v.evalPositive(this);
+                        v = v.evalPositive(this); break;
                     case minusToken:
-                        v = v.evalNegate(this);
+                        v = v.evalNegate(this); break;
                     default:
                         Main.panic("Illegal factorPrefix operator: " + k + "!");
                 }

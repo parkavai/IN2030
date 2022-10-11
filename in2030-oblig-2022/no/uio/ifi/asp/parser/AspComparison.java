@@ -47,17 +47,17 @@ class AspComparison extends AspSyntax {
             TokenKind k = compList.get(i-1).kind; 
             switch (k){
                 case lessToken:
-                    v = v.evalLess(v, this);
+                    v = v.evalLess(v, this); break;
                 case greaterToken:
-                    v = v.evalGreater(v, this);
+                    v = v.evalGreater(v, this); break;
                 case doubleEqualToken:
-                    v = v.evalEqual(v, this);
+                    v = v.evalEqual(v, this); break;
                 case greaterEqualToken:
-                    v = v.evalGreaterEqual(v, this);
+                    v = v.evalGreaterEqual(v, this); break;
                 case lessEqualToken:
-                    v = v.evalLessEqual(v, this);
+                    v = v.evalLessEqual(v, this); break;
                 case notEqualToken:
-                    v = v.evalNotEqual(v, this);
+                    v = v.evalNotEqual(v, this); break;
                 default:
                     Main.panic("Illegal comparison operator: " + k + "!");
             }   

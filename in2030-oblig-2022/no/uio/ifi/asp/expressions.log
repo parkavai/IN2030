@@ -1,0 +1,20 @@
+42 ==>
+Trace line 2: 42
+- 1017 ==>
+Trace line 3: -1017
+- 2 + 5 * 7 ==>
+Trace line 4: 5
+8 // 3 * (2 + 3) ==>
+Trace line 5: 5
+42.0 ==>
+Trace line 8: 42.0
+- 1017.0999755859375 ==>
+Trace line 9: -1017.0999755859375
+1.414199948310852 * 1.414199948310852 ==>
+Trace line 10: 1.414199948310852
+- 2 + 5.0 * 7 ==>
+Trace line 11: 5
+"Abc" ==>
+Trace line 14: ’"Abc"’
+"x" * 6 ==>
+Asp runtime error on line 15: '%' undefined for str!

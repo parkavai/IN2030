@@ -20,6 +20,11 @@ public class RuntimeIntValue extends RuntimeValue {
         return String.valueOf(intValue);
     }
 
+    @Override
+    public String showInfo() {
+        return Long.toString(intValue);
+    }
+
     // Copied from Dag Langmyhr: https://screencast.uninett.no/relay/ansatt/daguio.no/2019/17.10/2746600/IN2030-42-1_-_20191017_110157_39.html
     @Override
     public long getIntValue(String what, AspSyntax where) {
@@ -36,6 +41,11 @@ public class RuntimeIntValue extends RuntimeValue {
     @Override
     public boolean getBoolValue(String what, AspSyntax where) {
         return (intValue != 0);
+    }
+
+    @Override
+    public String getStringValue(String what, AspSyntax where) {
+        return String.valueOf(intValue);
     }
 
     // Copied from Dag Langmyhr: https://screencast.uninett.no/relay/ansatt/daguio.no/2019/17.10/2746600/IN2030-42-1_-_20191017_110157_39.html
@@ -104,7 +114,6 @@ public class RuntimeIntValue extends RuntimeValue {
 
     @Override
     public RuntimeValue evalIntDivide(RuntimeValue v, AspSyntax where) {
-        System.out.println("Calling evalIntDivide on integer");
         if (v instanceof RuntimeIntValue) {
             return new RuntimeIntValue(Math.floorDiv(intValue, v.getIntValue("// operand",where)));
         } 
