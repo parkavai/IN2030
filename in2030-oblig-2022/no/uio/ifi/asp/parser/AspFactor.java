@@ -48,7 +48,6 @@ class AspFactor extends AspSyntax {
 
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // -- Must be changed in part 4:
         RuntimeValue v = primaryList.get(0).eval(curScope);
         TokenKind k;
         if(factorPrefixList.size() > 0){
@@ -64,19 +63,19 @@ class AspFactor extends AspSyntax {
         }
         for(int i = 1; i < primaryList.size(); i++){
             k = factorOprList.get(i-1).kind;
+            RuntimeValue v2 = primaryList.get(i).eval(curScope);
             switch (k) {
                 case astToken:
-                    v = v.evalModulo(v, this); break; 
+                    v = v.evalMultiply(v2, this); break; 
                 case slashToken:
-                    v = v.evalDivide(v, this); break;
+                    v = v.evalDivide(v2, this); break;
                 case percentToken:
-                    v = v.evalModulo(v, this); break; 
+                    v = v.evalModulo(v2, this); break; 
                 case doubleSlashToken:
-                    v = v.evalIntDivide(v, this); break;
+                    v = v.evalIntDivide(v2, this); break;
                 default:
                     Main.panic("Illegal factor operator: " + k + "!");
             }
-            v = primaryList.get(i).eval(curScope);
             if(i < factorPrefixList.size()){
                 k = factorPrefixList.get(i).kind;
                 switch (k) {

@@ -27,9 +27,12 @@ public class AspStringLiteral extends AspAtom {
     public void prettyPrint() {
         // -- Must be changed in part 2:
         if(string.isEmpty()){
-            prettyWrite(string);
+            prettyWrite("");
         }
-        prettyWrite(string);
+        else if(string.charAt(0) == '\''){
+            prettyWrite("\'" + string + "\'");
+        }
+        prettyWrite("\"" + string + "\"");
     }
 
     @Override

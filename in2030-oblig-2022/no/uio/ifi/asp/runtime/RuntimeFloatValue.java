@@ -36,7 +36,7 @@ public class RuntimeFloatValue extends RuntimeValue {
             return new RuntimeFloatValue(floatValue + v.getFloatValue("+ operand",where));
         } 
         else if (v instanceof RuntimeIntValue) {
-            return new RuntimeFloatValue(floatValue + v.getIntValue("+ operand",where));
+            return new RuntimeFloatValue(floatValue + v.getFloatValue("+ operand",where));
         }
         runtimeError("Type error for +.", where);
         return null; // Required by the compiler.
@@ -75,7 +75,7 @@ public class RuntimeFloatValue extends RuntimeValue {
             return new RuntimeBoolValue(floatValue > v.getFloatValue("> operand",where));
         } 
         else if (v instanceof RuntimeIntValue) {
-            return new RuntimeBoolValue(floatValue > v.getIntValue("> operand",where));
+            return new RuntimeBoolValue(floatValue > v.getFloatValue("> operand",where));
         }
         runtimeError("Type error for >.", where);
         return null; // Required by the compiler.
@@ -87,7 +87,7 @@ public class RuntimeFloatValue extends RuntimeValue {
             return new RuntimeBoolValue(floatValue >= v.getFloatValue(">= operand",where));
         } 
         else if (v instanceof RuntimeIntValue) {
-            return new RuntimeBoolValue(floatValue >= v.getIntValue(">= operand",where));
+            return new RuntimeBoolValue(floatValue >= v.getFloatValue(">= operand",where));
         }
         runtimeError("Type error for >=.", where);
         return null; // Required by the compiler.
@@ -172,7 +172,7 @@ public class RuntimeFloatValue extends RuntimeValue {
             return new RuntimeBoolValue(floatValue != v.getFloatValue("!= operand",where));
         } 
         else if (v instanceof RuntimeFloatValue) {
-            return new RuntimeBoolValue((double) floatValue != v.getFloatValue("!= operand",where));
+            return new RuntimeBoolValue(floatValue != v.getFloatValue("!= operand",where));
         }
         else if (v instanceof RuntimeNoneValue) {
             return new RuntimeBoolValue(true);

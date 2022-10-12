@@ -215,12 +215,6 @@ public class Scanner {
 					int end = stringIteration(line, start, isDoubleQuotation);
 					start += 1;
 					String str = line.substring(start, end);;
-					if(!isDoubleQuotation){
-						str = "\'" + str +  "\'";
-					}
-					else{
-						str = "\"" + str +  "\"";
-					}
 					pointer = new Token(TokenKind.stringToken, curLineNum());
 					pointer.stringLit = str;
 					i = end;

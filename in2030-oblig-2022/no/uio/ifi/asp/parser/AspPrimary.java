@@ -50,9 +50,11 @@ public class AspPrimary extends AspSyntax {
         // -- Must be changed in part 4:
         RuntimeValue v = atom.eval(curScope);
         if(isSuffix){
-            v = primarySuffixList.get(0).eval(curScope);
-            for(int i = 1; i < primarySuffixList.size(); i++){
-                v = primarySuffixList.get(i).eval(curScope);
+            for(int i = 0; i < primarySuffixList.size(); i++){
+                RuntimeValue v2 = primarySuffixList.get(i).eval(curScope);
+                if(primarySuffixList.get(0) instanceof AspSubscription){
+                    v = v.evalSubscription(v2, this);
+                }
             }
         }
         return v; 

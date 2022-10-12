@@ -79,7 +79,7 @@ public class RuntimeIntValue extends RuntimeValue {
             return new RuntimeBoolValue(intValue == v.getIntValue("== operand",where));
         } 
         else if (v instanceof RuntimeFloatValue) {
-            return new RuntimeBoolValue((double) intValue == v.getFloatValue("== operand",where));
+            return new RuntimeBoolValue(intValue == v.getFloatValue("== operand",where));
         }
         else if (v instanceof RuntimeNoneValue) {
             return new RuntimeBoolValue(false);
@@ -94,7 +94,7 @@ public class RuntimeIntValue extends RuntimeValue {
             return new RuntimeBoolValue(intValue > v.getIntValue("> operand",where));
         } 
         else if (v instanceof RuntimeFloatValue) {
-            return new RuntimeBoolValue((double) intValue > v.getFloatValue("> operand",where));
+            return new RuntimeBoolValue(intValue > v.getFloatValue("> operand",where));
         }
         runtimeError("Type error for >.", where);
         return null; // Required by the compiler.
@@ -106,7 +106,7 @@ public class RuntimeIntValue extends RuntimeValue {
             return new RuntimeBoolValue(intValue >= v.getIntValue(">= operand",where));
         } 
         else if (v instanceof RuntimeFloatValue) {
-            return new RuntimeBoolValue((double) intValue >= v.getFloatValue(">= operand",where));
+            return new RuntimeBoolValue(intValue >= v.getFloatValue(">= operand",where));
         }
         runtimeError("Type error for >=.", where);
         return null; // Required by the compiler.
@@ -130,7 +130,7 @@ public class RuntimeIntValue extends RuntimeValue {
             return new RuntimeBoolValue(intValue < v.getIntValue("< operand",where));
         } 
         else if (v instanceof RuntimeFloatValue) {
-            return new RuntimeBoolValue((double) intValue < v.getFloatValue("< operand",where));
+            return new RuntimeBoolValue(intValue < v.getFloatValue("< operand",where));
         }
         runtimeError("Type error for <.", where);
         return null; // Required by the compiler.
@@ -142,7 +142,7 @@ public class RuntimeIntValue extends RuntimeValue {
             return new RuntimeBoolValue(intValue <= v.getIntValue("<= operand",where));
         } 
         else if (v instanceof RuntimeFloatValue) {
-            return new RuntimeBoolValue((double) intValue <= v.getFloatValue("<= operand",where));
+            return new RuntimeBoolValue(intValue <= v.getFloatValue("<= operand",where));
         }
         runtimeError("Type error for <=.", where);
         return null; // Required by the compiler.
@@ -175,7 +175,7 @@ public class RuntimeIntValue extends RuntimeValue {
 
     @Override
     public RuntimeValue evalNegate(AspSyntax where) {
-        return new RuntimeIntValue(- intValue); // Required by the compiler.
+        return new RuntimeIntValue(-1 * intValue); // Required by the compiler.
     }
 
     @Override
@@ -189,7 +189,7 @@ public class RuntimeIntValue extends RuntimeValue {
             return new RuntimeBoolValue(intValue != v.getIntValue("!= operand",where));
         } 
         else if (v instanceof RuntimeFloatValue) {
-            return new RuntimeBoolValue((double) intValue != v.getFloatValue("!= operand",where));
+            return new RuntimeBoolValue(intValue != v.getFloatValue("!= operand",where));
         }
         else if (v instanceof RuntimeNoneValue) {
             return new RuntimeBoolValue(true);

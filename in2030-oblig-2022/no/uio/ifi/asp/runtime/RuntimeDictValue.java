@@ -42,6 +42,11 @@ public class RuntimeDictValue extends RuntimeValue {
     }
 
     @Override
+    public RuntimeValue evalLen(AspSyntax where){
+        return new RuntimeIntValue((long) runTimeDict.size());
+    }
+
+    @Override
     public RuntimeValue evalSubscription(RuntimeValue v, AspSyntax where) {
         String key = v.getStringValue("{} operand", where);
         if(runTimeDict.get(key) == null){

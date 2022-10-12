@@ -19,23 +19,20 @@ public class RuntimeListValue extends RuntimeValue {
 
     @Override
     public String showInfo(){
-        String showString = "";
+        String showString = "[";
         for(RuntimeValue v: runTimeList){
             showString += v.toString();
         }
+        showString += "]";
         return showString;
     }
 
     @Override
     public String toString() {
-        String prettyString = "[";
-        for(int i = 0; i < runTimeList.size(); i++){
-            prettyString += runTimeList.get(i).toString();
-            if(i != runTimeList.size()-1){
-                prettyString += ",";
-            }
+        String prettyString = "";
+        for(RuntimeValue v: runTimeList){
+            prettyString += v.toString();
         }
-        prettyString += "]";
         return prettyString;
     }
 
