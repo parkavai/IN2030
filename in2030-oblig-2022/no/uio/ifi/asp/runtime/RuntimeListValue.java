@@ -20,8 +20,11 @@ public class RuntimeListValue extends RuntimeValue {
     @Override
     public String showInfo(){
         String showString = "[";
-        for(RuntimeValue v: runTimeList){
-            showString += v.toString();
+        for(int i = 0; i < runTimeList.size(); i++){
+            showString += runTimeList.get(i).toString();
+            if(i < runTimeList.size()-1){
+                showString += ", ";
+            }
         }
         showString += "]";
         return showString;
@@ -51,7 +54,7 @@ public class RuntimeListValue extends RuntimeValue {
         if(v instanceof RuntimeIntValue){
             ArrayList<RuntimeValue> newList = new ArrayList<>();
             for(int i = 0; i < v.getIntValue("* operand", where); i++){
-                newList.add(v);
+                newList.addAll(runTimeList);
             }
             return new RuntimeListValue(newList);
         }

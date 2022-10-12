@@ -17,7 +17,12 @@ public class RuntimeFloatValue extends RuntimeValue {
 
     @Override
     public String toString() {
-        return String.valueOf(floatValue);
+        return Double.toString(floatValue);
+    }
+
+    @Override
+    public String showInfo() {
+        return Double.toString(floatValue);
     }
 
     @Override
@@ -158,7 +163,7 @@ public class RuntimeFloatValue extends RuntimeValue {
 
     @Override
     public RuntimeValue evalNegate(AspSyntax where) {
-        return new RuntimeFloatValue(- floatValue); // Required by the compiler.
+        return new RuntimeFloatValue(-1.0 * floatValue); // Required by the compiler.
     }
 
     @Override

@@ -20,18 +20,24 @@ public class RuntimeDictValue extends RuntimeValue {
 
     @Override 
     public String showInfo(){
-        String prettyString = "";
-        for(RuntimeValue v: runTimeDict.values()){
-            prettyString += v.toString();
+        String prettyString = "{";
+        int i = 0;
+        for(String keys: runTimeDict.keySet()){
+            prettyString += keys; prettyString += ": "; prettyString += runTimeDict.get(keys);
+            if(i < runTimeDict.size()-1){
+                prettyString += ", ";
+            }
+            i += 1;
         }
+        prettyString += "}";
         return prettyString;
     }
 
     @Override
     public String toString() {
-        String prettyString = "{";
-        for(String keys: runTimeDict.keySet()){
-            prettyString += keys; prettyString += ": "; prettyString += runTimeDict.get(keys);
+        String prettyString = "";
+        for(RuntimeValue v: runTimeDict.values()){
+            prettyString += v.toString();
         }
         return prettyString;
     }

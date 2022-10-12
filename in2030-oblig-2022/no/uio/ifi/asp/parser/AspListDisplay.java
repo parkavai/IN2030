@@ -40,7 +40,9 @@ public class AspListDisplay extends AspAtom {
         if(expr.size() > 1){
             for(int i = 0; i < expr.size(); i++){
                 expr.get(i).prettyPrint();
-                prettyWrite(", ");
+                if(i < expr.size()-1){
+                    prettyWrite(", ");
+                }
             }
         }
         prettyWrite("]");
