@@ -99,4 +99,13 @@ public class RuntimeListValue extends RuntimeValue {
         return null; // Required by the compiler.
     }
 
+    @Override
+    public void evalAssignElem(RuntimeValue inx, RuntimeValue val, AspSyntax where) {
+        int index = (int) inx.getIntValue("[]", where);
+        // Is it necessary to check if index is less than length?
+        if(index < evalLen(where).getIntValue("[]", where)){
+            runTimeList.set(index, val); 
+        }
+    }
+
 }

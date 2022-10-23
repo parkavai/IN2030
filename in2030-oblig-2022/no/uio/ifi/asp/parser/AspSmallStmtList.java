@@ -8,6 +8,7 @@ import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspSmallStmtList extends AspStmt {
     ArrayList<AspSmallStmt> smallStmt = new ArrayList<>();
+    boolean isSemi = false; 
 
     AspSmallStmtList(int n){
         super(n);
@@ -31,7 +32,10 @@ public class AspSmallStmtList extends AspStmt {
             } 
             smallStmtList.smallStmt.add(AspSmallStmt.parse(s));
         }
-        if(s.curToken().kind == semicolonToken) skip(s, semicolonToken);
+        if(s.curToken().kind == semicolonToken) {
+            skip(s, semicolonToken); 
+            smallStmtList.isSemi = true; 
+        }
         skip(s, newLineToken);
         
         leaveParser("small stmt list");
@@ -41,9 +45,15 @@ public class AspSmallStmtList extends AspStmt {
     @Override
     public void prettyPrint() {
         // -- Must be changed in part 2:
-        for(int i = 0; i < smallStmt.size(); i++){
-            smallStmt.get(i).prettyPrint();
-            prettyWrite("; ");
+        smallStmt.get(0).prettyPrint();
+        if(isSemi){
+            prettyWrite(";");
+        }
+        if(smallStmt.size() > 1){
+            for(int i = 1; i < smallStmt.size(); i++){
+                smallStmt.get(i).prettyPrint();
+                prettyWrite("; ");
+            }
         }
         prettyWriteLn();
     }

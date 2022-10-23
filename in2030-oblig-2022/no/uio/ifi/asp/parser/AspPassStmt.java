@@ -29,6 +29,7 @@ public class AspPassStmt extends AspSmallStmt{
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         // -- Must be changed in part 4:
+        trace("pass");
         return null;
     }
 

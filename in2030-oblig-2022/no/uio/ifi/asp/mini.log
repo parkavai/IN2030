@@ -1,8 +1,31 @@
-42.0 ==>
-Trace line 1: 42.0
-- 1017.0999755859375 ==>
-Trace line 2: -1017.0999755859375
-1.414199948310852 * 1.414199948310852 ==>
-Trace line 3: 1.9999614938024166
-- 2 + 5.0 * 7 ==>
-Trace line 4: 33.0
+<program>
+   1: True
+  <stmt>
+    <small stmt list>
+      <small stmt>
+        <expr stmt>
+          <expr>
+            <and test>
+              <not test>
+                <comparison>
+                  <term>
+                    <factor>
+                      <primary>
+                        <atom>
+                          <boolean literal>
+                          </boolean literal>
+                        </atom>
+                      </primary>
+                    </factor>
+                  </term>
+                </comparison>
+              </not test>
+            </and test>
+          </expr>
+        </expr stmt>
+      </small stmt>
+    </small stmt list>
+  </stmt>
+</program>
+
+True

@@ -16,6 +16,15 @@ abstract class AspSmallStmt extends AspSmallStmtList {
         
         AspSmallStmt sss = null;
         switch (s.curToken().kind) {
+            case integerToken:
+			case floatToken:
+			case stringToken: 
+			case trueToken: 
+			case falseToken: 
+			case noneToken:
+			case leftParToken:
+			case leftBraceToken:
+			case leftBracketToken:
             case nameToken:
             if(s.anyEqualToken()){
                 sss = AspAssignment.parse(s); break; 
@@ -32,7 +41,7 @@ abstract class AspSmallStmt extends AspSmallStmtList {
             default:
             parserError("Expected an expression stmt but found a " +
             s.curToken().kind + "!", s.curLineNum());
-            }
+        }
 
         leaveParser("small stmt");
         return sss;

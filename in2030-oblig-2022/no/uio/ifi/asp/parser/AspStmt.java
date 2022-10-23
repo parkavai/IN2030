@@ -18,7 +18,16 @@ abstract class AspStmt extends AspSyntax {
         switch (s.curToken().kind) {
             // First check if it is small stmt
             case nameToken:
-            case andToken:
+			case integerToken:
+			case floatToken:
+			case stringToken: 
+			case trueToken: 
+			case falseToken: 
+			case noneToken:
+			case leftParToken:
+			case leftBraceToken:
+			case leftBracketToken:
+            case notToken:
             case globalToken:
             case passToken:
             case returnToken:
