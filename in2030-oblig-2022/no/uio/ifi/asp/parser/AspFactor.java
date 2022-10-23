@@ -6,7 +6,7 @@ import no.uio.ifi.asp.runtime.*;
 import no.uio.ifi.asp.scanner.*;
 
 class AspFactor extends AspSyntax {
-    ArrayList<AspPrimary> primaryList = new ArrayList<>();
+ArrayList<AspPrimary> primaryList = new ArrayList<>();
     ArrayList<AspFactorOpr> factorOprList = new ArrayList<>();
     ArrayList<AspFactorPrefix> factorPrefixList = new ArrayList<>();
 
