@@ -8,7 +8,6 @@ import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspSmallStmtList extends AspStmt {
     ArrayList<AspSmallStmt> smallStmt = new ArrayList<>();
-    Boolean isEndSemi = false;
 
     AspSmallStmtList(int n){
         super(n);
@@ -28,7 +27,6 @@ public class AspSmallStmtList extends AspStmt {
              * that one is connected to end of the diagram
             */ 
             if(s.curToken().kind == semicolonToken){
-                smallStmtList.isEndSemi = true; 
                 break;
             } 
             smallStmtList.smallStmt.add(AspSmallStmt.parse(s));
@@ -43,14 +41,8 @@ public class AspSmallStmtList extends AspStmt {
     @Override
     public void prettyPrint() {
         // -- Must be changed in part 2:
-        smallStmt.get(0).prettyPrint();
-        if(smallStmt.size() > 1){
-            for(int i = 1; i < smallStmt.size(); i++){
-                smallStmt.get(i).prettyPrint();
-                prettyWrite("; ");
-            }
-        }
-        if(isEndSemi){
+        for(int i = 0; i < smallStmt.size(); i++){
+            smallStmt.get(i).prettyPrint();
             prettyWrite("; ");
         }
         prettyWriteLn();

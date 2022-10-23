@@ -46,16 +46,16 @@ public class AspIfStmt extends AspCompoundStmt {
     public void prettyPrint() {
         // -- Must be changed in part 2:
         prettyWrite("if "); exprList.get(0).prettyPrint();
-        prettyWrite(":"); suiteList.get(0).prettyPrint();
+        prettyWrite(": "); suiteList.get(0).prettyPrint();
         if(isElif){
             prettyWrite("elif ");
             for(int i = 1; i < exprList.size(); i++){
-                exprList.get(i).prettyPrint(); prettyWrite(":");
+                exprList.get(i).prettyPrint(); prettyWrite(": ");
                 suiteList.get(i).prettyPrint(); prettyWrite("elif ");
             }
         }
         if(isElse){
-            prettyWrite("else"); prettyWrite(":");
+            prettyWrite("else"); prettyWrite(": ");
             suiteList.get(suiteList.size() - 1).prettyPrint();
         }
     }
