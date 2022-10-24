@@ -12,6 +12,10 @@ public class RuntimeListValue extends RuntimeValue {
         runTimeList = v;
     }
 
+    public ArrayList<RuntimeValue> getList(){
+        return runTimeList;
+    }
+
     @Override
     String typeName() {
         return "list";

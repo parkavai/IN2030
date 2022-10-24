@@ -14,6 +14,10 @@ public class AspFuncDef extends AspCompoundStmt {
     AspFuncDef(int n){
         super(n);
     }
+
+    public ArrayList<AspName> getArgs(){
+        return nameList;
+    }
     
     static AspFuncDef parse(Scanner s){
         enterParser("func def");
@@ -60,6 +64,18 @@ public class AspFuncDef extends AspCompoundStmt {
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         // -- Must be changed in part 4:
+        ArrayList<RuntimeValue> args = new ArrayList<>();
+        String functionName = nameList.get(0).value;
+        trace("def " + functionName);
+        for(int i = 0; i < nameList.size(); i++){
+            args.add(nameList.get(i).eval(curScope));
+        }
+        RuntimeFunc newFunc = new RuntimeFunc(this, curScope, functionName);
+        newFunc.evalFuncCall(args, this);
         return null;
+    }
+
+    public RuntimeValue runFunction(RuntimeScope curScope) throws RuntimeReturnValue{
+        return suite.eval(curScope);
     }
 }

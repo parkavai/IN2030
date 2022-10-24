@@ -34,9 +34,16 @@ public class AspWhileStmt extends AspCompoundStmt{
         prettyWrite(":"); body.prettyPrint();
     }
 
+    // Copied from: https://www.uio.no/studier/emner/matnat/ifi/IN2030/h21/forelesninger/uke-44-utdeling.pdf
     @Override
-    public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // -- Must be changed in part 4:
+    RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
+        while (true) {
+            RuntimeValue t = test.eval(curScope);
+            if (! t.getBoolValue("while loop test",this)) break;
+            trace("while True: ...");
+            body.eval(curScope);
+        }
+        trace("while False:");
         return null;
     }
 

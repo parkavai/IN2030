@@ -50,10 +50,27 @@ public class AspPrimary extends AspSyntax {
         // -- Must be changed in part 4:
         RuntimeValue v = atom.eval(curScope);
         if(isSuffix){
+            ArrayList<RuntimeValue> arguments = new ArrayList<>();
             for(int i = 0; i < primarySuffixList.size(); i++){
                 RuntimeValue v2 = primarySuffixList.get(i).eval(curScope);
-                if(primarySuffixList.get(0) instanceof AspSubscription){
-                    v = v.evalSubscription(v2, this);
+                if(v instanceof RuntimeListValue || v instanceof RuntimeDictValue){
+                    // Is subscription
+                    if(primarySuffixList.get(i) instanceof AspSubscription){
+                        v = v.evalSubscription(v2, this);
+                    }
+                }
+                // Is Argument
+                else if(primarySuffixList.get(i) instanceof AspArguments){
+                    // Arguments are made out of lists which is why we get the lists of the arguments through casting runtimevalue to runtimelistvalue
+                    if(v2 instanceof RuntimeListValue){
+                        // Cast value to runtimelistvalue
+                        RuntimeListValue list = (RuntimeListValue) v2; 
+                        // Get the arguments from runtimelistvalue
+                        arguments = list.getList();
+                        AspName functionName = (AspName) atom; 
+                        trace("Call function " + functionName.value + "with params: " + arguments);
+                        v = v.evalFuncCall(arguments, this);
+                    }
                 }
             }
         }

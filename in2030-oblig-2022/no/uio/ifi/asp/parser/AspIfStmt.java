@@ -63,6 +63,21 @@ public class AspIfStmt extends AspCompoundStmt {
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         // -- Must be changed in part 4:
+        Boolean areAnyTrue = false; 
+        for(int i = 0; i < exprList.size(); i++){
+            RuntimeValue expr = exprList.get(i).eval(curScope);
+            if(expr.getBoolValue("if", this)){
+                trace(String.format("if True alt #%d: ...", i));
+                suiteList.get(i).eval(curScope);
+                areAnyTrue = true; 
+                break;
+            }
+        }
+        // Should no if or elif statements be true, aswell as there is an else, then we traverse to the else
+        if(areAnyTrue == false && isElse){
+            trace("else: ....");
+            suiteList.get(suiteList.size()-1).eval(curScope);
+        }
         return null;
     }
 }
