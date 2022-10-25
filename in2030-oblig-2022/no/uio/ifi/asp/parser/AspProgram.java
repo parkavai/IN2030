@@ -42,11 +42,17 @@ public class AspProgram extends AspSyntax {
         }
     }
 
+    // Copied from: https://www.uio.no/studier/emner/matnat/ifi/IN2030/h19/timeplan/uke-46-utdeling.pdf
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // -- Must be changed in part 4:
-        for(AspStmt s: stmts){
-            s.eval(curScope);
+        for (AspStmt as: stmts) {
+            try {
+                as.eval(curScope);
+            } 
+            catch (RuntimeReturnValue rrv) {
+                RuntimeValue.runtimeError("Return statement outside function!",
+                rrv.lineNum);
+            }
         }
         return null;
     }

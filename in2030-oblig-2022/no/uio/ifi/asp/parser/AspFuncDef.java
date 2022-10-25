@@ -66,11 +66,11 @@ public class AspFuncDef extends AspCompoundStmt {
         // -- Must be changed in part 4:
         ArrayList<RuntimeValue> args = new ArrayList<>();
         String functionName = nameList.get(0).value;
-        trace("def " + functionName);
         for(int i = 0; i < nameList.size(); i++){
             args.add(nameList.get(i).eval(curScope));
         }
         RuntimeFunc newFunc = new RuntimeFunc(this, curScope, functionName);
+        trace("def " + functionName);
         newFunc.evalFuncCall(args, this);
         return null;
     }

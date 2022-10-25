@@ -17,6 +17,11 @@ public class RuntimeFunc extends RuntimeValue {
         this.name = name; 
     }
 
+    // For runTimeLibrary only
+    public RuntimeFunc(String function) {
+        this.name = function; 
+    }
+
     @Override
     public RuntimeValue evalFuncCall(ArrayList<RuntimeValue> actPars, AspSyntax where) {
         // The formal and actual arguments must be the same in terms of length

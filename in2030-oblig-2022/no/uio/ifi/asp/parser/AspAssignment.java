@@ -59,12 +59,19 @@ public class AspAssignment extends AspSmallStmt {
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         // -- Must be changed in part 4:
         RuntimeValue v = name.eval(curScope);
+        RuntimeValue ex = expr.eval(curScope);
         if(isSubscription){
-            for(int i = 0; i < subs.size(); i++){
+            // Iterate untill the last index
+            for(int i = 0; i < (subs.size()-1); i++){
                 v.evalSubscription(subs.get(i).eval(curScope), this);
             }
-            // Must assign element here but must be done in part 4 i think?
+            // The last subscription value 
+            AspSubscription last = subs.get(subs.size()-1);
+            v.evalAssignElem(last.eval(curScope), ex, this);
         }
-        return v;
+        else{
+            curScope.assign(name.value, ex);
+        }
+        return null;
     }
 }
