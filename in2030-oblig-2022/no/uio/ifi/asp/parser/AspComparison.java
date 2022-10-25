@@ -47,6 +47,8 @@ class AspComparison extends AspSyntax {
             v = terms.get(i-1).eval(curScope);
             TokenKind k = compList.get(i-1).kind; 
             RuntimeValue v2 = terms.get(i).eval(curScope);
+            System.out.println("Comparison: " + v.showInfo());
+            System.out.println("Comparison: " + v2.showInfo());
             switch (k){
                 case lessToken:
                     v = v.evalLess(v2, this); break;

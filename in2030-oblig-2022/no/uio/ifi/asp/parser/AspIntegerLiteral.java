@@ -38,7 +38,6 @@ public class AspIntegerLiteral extends AspAtom {
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         // -- Must be changed in part 4:
-        trace(String.valueOf(intValue));
         return new RuntimeIntValue(intValue);
     }
 }

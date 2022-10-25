@@ -7,7 +7,7 @@ import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspName extends AspAtom{
-    String value;
+    public String value;
 
     AspName(int n){
         super(n);
@@ -31,7 +31,6 @@ public class AspName extends AspAtom{
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         // -- Must be changed in part 4:
-        trace(value);
         return curScope.find(value, this);
     }
 

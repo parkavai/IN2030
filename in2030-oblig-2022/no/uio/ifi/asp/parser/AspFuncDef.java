@@ -7,16 +7,12 @@ import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspFuncDef extends AspCompoundStmt {
-    ArrayList<AspName> nameList = new ArrayList<>();
+    public ArrayList<AspName> nameList = new ArrayList<>();
     AspSuite suite;
     ArrayList<String> commaList = new ArrayList<>();
 
     AspFuncDef(int n){
         super(n);
-    }
-
-    public ArrayList<AspName> getArgs(){
-        return nameList;
     }
     
     static AspFuncDef parse(Scanner s){
@@ -64,14 +60,16 @@ public class AspFuncDef extends AspCompoundStmt {
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         // -- Must be changed in part 4:
-        ArrayList<RuntimeValue> args = new ArrayList<>();
         String functionName = nameList.get(0).value;
+        trace("def " + functionName);
+        ArrayList<RuntimeValue> args = new ArrayList<>(); 
+        // Important to remove the function name as it isn´t a formal parameter
+        nameList.remove(0);
         for(int i = 0; i < nameList.size(); i++){
-            args.add(nameList.get(i).eval(curScope));
+            args.add(new RuntimeStringValue(nameList.get(i).value));
         }
         RuntimeFunc newFunc = new RuntimeFunc(this, curScope, functionName);
-        trace("def " + functionName);
-        newFunc.evalFuncCall(args, this);
+        curScope.assign(functionName, newFunc);
         return null;
     }
 

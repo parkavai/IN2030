@@ -29,11 +29,14 @@ public class AspReturn extends AspSmallStmt{
         expr.prettyPrint();
     }
 
+    // Copied from: https://www.uio.no/studier/emner/matnat/ifi/IN2030/h21/forelesninger/uke-45-utdeling.pdf
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         // -- Must be changed in part 4:
-        trace("return ");
-        return null;
+        RuntimeValue v = expr.eval(curScope);
+        trace("return "+ v.showInfo());
+        // Ensures that we cancel the chain of eval-methods run since we have come to a "return"-stmt to return the value. 
+        throw new RuntimeReturnValue(v,lineNum);
     }
 
 }

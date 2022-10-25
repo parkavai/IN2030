@@ -55,25 +55,26 @@ public class AspPrimary extends AspSyntax {
                 RuntimeValue v2 = primarySuffixList.get(i).eval(curScope);
                 if(v instanceof RuntimeListValue || v instanceof RuntimeDictValue){
                     // Is subscription
-                    if(primarySuffixList.get(i) instanceof AspSubscription){
-                        v = v.evalSubscription(v2, this);
-                    }
+                    v = v.evalSubscription(v2, this);
                 }
                 // Is Argument
-                else if(primarySuffixList.get(i) instanceof AspArguments){
+                else{
                     // Arguments are made out of lists which is why we get the lists of the arguments through casting runtimevalue to runtimelistvalue
                     if(v2 instanceof RuntimeListValue){
                         // Cast value to runtimelistvalue
                         RuntimeListValue list = (RuntimeListValue) v2; 
+                        // System.out.println(list.showInfo());
                         // Get the arguments from runtimelistvalue
                         arguments = list.getList();
                         AspName functionName = (AspName) atom; 
-                        trace("Call function " + functionName.value + "with params: [" + arguments + "]");
+                        trace("Call function " + functionName.value + " with params: " + arguments);
                         v = v.evalFuncCall(arguments, this);
                     }
                 }
             }
         }
+        // If print is called, then we should write none after. 
+        if(v instanceof RuntimeNoneValue) trace("None");
         return v; 
     }
 }

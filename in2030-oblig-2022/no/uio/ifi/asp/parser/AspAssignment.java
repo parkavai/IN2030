@@ -58,12 +58,14 @@ public class AspAssignment extends AspSmallStmt {
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         // -- Must be changed in part 4:
-        RuntimeValue v = name.eval(curScope);
         RuntimeValue ex = expr.eval(curScope);
+        System.out.println("Assignment-Expr: " + ex.showInfo());
         if(isSubscription){
             // Iterate untill the last index
-            for(int i = 0; i < (subs.size()-1); i++){
-                v.evalSubscription(subs.get(i).eval(curScope), this);
+            RuntimeValue v = name.eval(curScope);
+            for(int i = 0; i < subs.size()-1; i++){
+                System.out.print("Assignment-V: " + v.showInfo());
+                v = v.evalSubscription(subs.get(i).eval(curScope), this);
             }
             // The last subscription value 
             AspSubscription last = subs.get(subs.size()-1);
@@ -71,6 +73,7 @@ public class AspAssignment extends AspSmallStmt {
         }
         else{
             curScope.assign(name.value, ex);
+            trace(name.value + " = " + ex.toString());
         }
         return null;
     }

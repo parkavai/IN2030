@@ -32,7 +32,7 @@ public class RuntimeLibrary extends RuntimeScope {
             public RuntimeValue evalFuncCall(ArrayList<RuntimeValue> actualParams, AspSyntax where) {
                 for (int i = 0; i < actualParams.size(); ++i) {
                     if (i > 0) System.out.print(" ");
-                    System.out.print(actualParams.get(i).toString());
+                    System.out.print(actualParams.get(i).getStringValue("print", where));
                 }
                 System.out.println();
                 return new RuntimeNoneValue();
@@ -87,7 +87,9 @@ public class RuntimeLibrary extends RuntimeScope {
                 checkNumParams(actualParams, 2, "range", where);
                 long v1 = actualParams.get(0).getIntValue("range", where);
                 long v2 = actualParams.get(1).getIntValue("range", where);
-                v2 = v2 - 1; 
+                if(v1 > v2){
+                    return null;
+                } 
                 ArrayList<RuntimeValue> range = new ArrayList<>();
                 for(long i = v1; i < v2; i++){
                     range.add(new RuntimeIntValue(i));

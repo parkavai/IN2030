@@ -1,31 +1,4 @@
-<program>
-   1: True
-  <stmt>
-    <small stmt list>
-      <small stmt>
-        <expr stmt>
-          <expr>
-            <and test>
-              <not test>
-                <comparison>
-                  <term>
-                    <factor>
-                      <primary>
-                        <atom>
-                          <boolean literal>
-                          </boolean literal>
-                        </atom>
-                      </primary>
-                    </factor>
-                  </term>
-                </comparison>
-              </not test>
-            </and test>
-          </expr>
-        </expr stmt>
-      </small stmt>
-    </small stmt list>
-  </stmt>
-</program>
-
-True
+Trace line 1: word = "abca"
+Trace line 3: if True alt #0: ...
+Trace line 4: Call function print with params: ["Riktig"]
+Trace line 4: None
