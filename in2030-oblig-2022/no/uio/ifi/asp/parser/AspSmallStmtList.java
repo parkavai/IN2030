@@ -8,6 +8,7 @@ import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspSmallStmtList extends AspStmt {
     ArrayList<AspSmallStmt> smallStmt = new ArrayList<>();
+    ArrayList<String> commaList = new ArrayList<>();
     boolean isSemi = false; 
 
     AspSmallStmtList(int n){
@@ -19,20 +20,15 @@ public class AspSmallStmtList extends AspStmt {
         
         AspSmallStmtList smallStmtList = new AspSmallStmtList(s.curLineNum());
         smallStmtList.smallStmt.add(AspSmallStmt.parse(s));
-        while(true){
-            // Could be a newline
-            if(s.curToken().kind == newLineToken) break;
+        while(s.curToken().kind != newLineToken){
             skip(s, semicolonToken);
-
-            // We break if there is a newLineToken or semiColonToken right after the one that is skipped 
-            if(s.curToken().kind == newLineToken || s.curToken().kind == semicolonToken){
+            smallStmtList.isSemi = true;
+            smallStmtList.commaList.add("; ");
+            // Break if there is a newLineToken right after
+            if(s.curToken().kind == newLineToken){
                 break;
             } 
             smallStmtList.smallStmt.add(AspSmallStmt.parse(s));
-        }
-        if(s.curToken().kind == semicolonToken) {
-            skip(s, semicolonToken); 
-            smallStmtList.isSemi = true; 
         }
         skip(s, newLineToken);
         
@@ -45,12 +41,13 @@ public class AspSmallStmtList extends AspStmt {
         // -- Must be changed in part 2:
         smallStmt.get(0).prettyPrint();
         if(isSemi){
-            prettyWrite(";");
+            prettyWrite("; ");
         }
         if(smallStmt.size() > 1){
             for(int i = 1; i < smallStmt.size(); i++){
                 smallStmt.get(i).prettyPrint();
-                prettyWrite("; ");
+                int colonIndex = i - 1;
+                if(colonIndex < commaList.size()) prettyWrite(commaList.get(colonIndex));
             }
         }
         prettyWriteLn();

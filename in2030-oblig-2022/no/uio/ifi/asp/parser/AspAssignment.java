@@ -62,7 +62,6 @@ public class AspAssignment extends AspSmallStmt {
         if(isSubscription){
             // Iterate untill the last index
             RuntimeValue v = name.eval(curScope);
-            System.out.println("Assignment-v: " + v.showInfo());
             for(int i = 0; i < subs.size()-1; i++){
                 v = v.evalSubscription(subs.get(i).eval(curScope), this);
             }
