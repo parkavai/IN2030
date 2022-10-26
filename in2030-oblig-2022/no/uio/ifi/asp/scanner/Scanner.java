@@ -559,7 +559,6 @@ public class Scanner {
 		return false;
 	}
 
-	// Hva er hensikten med funksjonen? Hva er bruksområdet?
 	public boolean anyEqualToken() {
 		for (Token t : curLineTokens) {
 			if (t.kind == equalToken)

@@ -18,7 +18,7 @@ public class RuntimeStringValue extends RuntimeValue{
     @Override
     public String toString() {
         // Will have quotation marks around string
-        return "\"" + stringValue + "\"";
+        return "\'" + stringValue + "\'";
     }
     
     @Override
@@ -29,6 +29,16 @@ public class RuntimeStringValue extends RuntimeValue{
     @Override
     public String getStringValue(String what, AspSyntax where) {
         return stringValue;
+    }
+
+    @Override
+    public long getIntValue(String what, AspSyntax where) {
+        return Long.valueOf(stringValue);
+    }
+
+    @Override
+    public double getFloatValue(String what, AspSyntax where) {
+        return Float.valueOf(stringValue);
     }
 
     @Override

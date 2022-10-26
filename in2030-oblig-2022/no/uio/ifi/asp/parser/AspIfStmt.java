@@ -65,12 +65,12 @@ public class AspIfStmt extends AspCompoundStmt {
         // -- Must be changed in part 4:
         for(int i = 0; i < exprList.size(); i++){
             RuntimeValue expr = exprList.get(i).eval(curScope);
-            trace(String.format("if True alt #%d: ...", i));
             if(expr.getBoolValue("if", this) == true){
+                trace(String.format("if True alt #%d: ...", i));
                 return suiteList.get(i).eval(curScope); 
             }
         }
-        // Should no if or elif statements be true, aswell as there is an else, then we traverse to the else
+        // Should no if or elif statements be true and there is an else, then we traverse to the else
         if(isElse){
             trace("else: ....");
             return suiteList.get(suiteList.size()-1).eval(curScope);

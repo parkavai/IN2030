@@ -39,6 +39,9 @@ public class AspGlobalStmt extends AspSmallStmt{
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         // -- Must be changed in part 4:
+        for(AspName v: nameList){
+            curScope.registerGlobalName(v.value);
+        }
         return null;
     }
 

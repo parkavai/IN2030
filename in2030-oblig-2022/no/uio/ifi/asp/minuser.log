@@ -1,0 +1,8 @@
+Trace line 5: a = 1
+Trace line 6: b = 2
+Trace line 7: v = 2
+Trace line 8: Call function print with params: [2]
+Trace line 8: None
+Trace line 9: w = 2
+Trace line 10: Call function print with params: [2]
+Trace line 10: None

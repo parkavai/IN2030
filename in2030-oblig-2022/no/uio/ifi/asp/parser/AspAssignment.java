@@ -59,12 +59,11 @@ public class AspAssignment extends AspSmallStmt {
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         // -- Must be changed in part 4:
         RuntimeValue ex = expr.eval(curScope);
-        System.out.println("Assignment-Expr: " + ex.showInfo());
         if(isSubscription){
             // Iterate untill the last index
             RuntimeValue v = name.eval(curScope);
+            System.out.println("Assignment-v: " + v.showInfo());
             for(int i = 0; i < subs.size()-1; i++){
-                System.out.print("Assignment-V: " + v.showInfo());
                 v = v.evalSubscription(subs.get(i).eval(curScope), this);
             }
             // The last subscription value 
@@ -72,7 +71,12 @@ public class AspAssignment extends AspSmallStmt {
             v.evalAssignElem(last.eval(curScope), ex, this);
         }
         else{
-            curScope.assign(name.value, ex);
+            if(curScope.hasGlobalName(name.value)){
+                Main.globalScope.assign(name.value, ex);
+            }
+            else{
+                curScope.assign(name.value, ex);
+            }
             trace(name.value + " = " + ex.toString());
         }
         return null;

@@ -21,13 +21,11 @@ public class AspSmallStmtList extends AspStmt {
         smallStmtList.smallStmt.add(AspSmallStmt.parse(s));
         while(true){
             // Could be a newline
-            if(s.curToken().kind != semicolonToken) break;
+            if(s.curToken().kind == newLineToken) break;
             skip(s, semicolonToken);
-            /**
-             * We break if there is another ';' right after the one that is skipped since
-             * that one is connected to end of the diagram
-            */ 
-            if(s.curToken().kind == semicolonToken){
+
+            // We break if there is a newLineToken or semiColonToken right after the one that is skipped 
+            if(s.curToken().kind == newLineToken || s.curToken().kind == semicolonToken){
                 break;
             } 
             smallStmtList.smallStmt.add(AspSmallStmt.parse(s));
