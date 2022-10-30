@@ -44,7 +44,6 @@ public class AspIfStmt extends AspCompoundStmt {
 
     @Override
     public void prettyPrint() {
-        // -- Must be changed in part 2:
         prettyWrite("if "); exprList.get(0).prettyPrint();
         prettyWrite(": "); suiteList.get(0).prettyPrint();
         if(isElif){
@@ -62,7 +61,6 @@ public class AspIfStmt extends AspCompoundStmt {
 
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // -- Must be changed in part 4:
         for(int i = 0; i < exprList.size(); i++){
             RuntimeValue expr = exprList.get(i).eval(curScope);
             if(expr.getBoolValue("if", this) == true){

@@ -41,7 +41,6 @@ public class AspFuncDef extends AspCompoundStmt {
 
     @Override
     public void prettyPrint() {
-        // -- Must be changed in part 2:
         prettyWrite("def "); nameList.get(0).prettyPrint(); prettyWrite(" (");
         int commaAmount = 0;
         if(nameList.size() > 1){
@@ -59,7 +58,6 @@ public class AspFuncDef extends AspCompoundStmt {
 
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // -- Must be changed in part 4:
         String functionName = nameList.get(0).value;
         trace("def " + functionName);
         ArrayList<RuntimeValue> args = new ArrayList<>(); 

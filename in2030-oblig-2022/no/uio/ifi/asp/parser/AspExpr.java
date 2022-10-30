@@ -21,7 +21,6 @@ public class AspExpr extends AspSyntax {
     public static AspExpr parse(Scanner s) {
         enterParser("expr");
 
-        // -- Must be changed in part 2:
         AspExpr ae = new AspExpr(s.curLineNum());
         while(true){
             ae.andTests.add(AspAndTest.parse(s));
@@ -36,7 +35,6 @@ public class AspExpr extends AspSyntax {
 
     @Override
     public void prettyPrint() {
-        // -- Must be changed in part 2:
         andTests.get(0).prettyPrint();
         if(isOr){
             for(int i = 1; i < andTests.size(); i++){
@@ -48,7 +46,6 @@ public class AspExpr extends AspSyntax {
 
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // -- Must be changed in part 3:
         RuntimeValue v = andTests.get(0).eval(curScope);
         if(isOr){
             for(int i = 1; i < andTests.size(); i++){

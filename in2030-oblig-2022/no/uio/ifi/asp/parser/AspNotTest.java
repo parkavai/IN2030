@@ -30,7 +30,6 @@ class AspNotTest extends AspSyntax {
 
     @Override
     public void prettyPrint() {
-        // -- Must be changed in part 2:
         if(isNot){
             prettyWrite("not ");
         }
@@ -40,7 +39,6 @@ class AspNotTest extends AspSyntax {
     // Copied from Dag Langmyhr: https://screencast.uninett.no/relay/ansatt/daguio.no/2019/17.10/2746600/IN2030-42-1_-_20191017_110157_39.html
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // -- Must be changed in part 4:
         RuntimeValue v = comp.eval(curScope);
         if(isNot){
             v = v.evalNot(this);

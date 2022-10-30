@@ -31,7 +31,6 @@ class AspComparison extends AspSyntax {
 
     @Override
     public void prettyPrint() {
-        // -- Must be changed in part 2:
         terms.get(0).prettyPrint();
         for(int i = 1; i < terms.size(); i++){
             compList.get(i-1).prettyPrint();
@@ -41,7 +40,6 @@ class AspComparison extends AspSyntax {
 
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // -- Must be changed in part 4:
         RuntimeValue v = terms.get(0).eval(curScope);
         for(int i = 1; i < terms.size(); i++){
             v = terms.get(i-1).eval(curScope);

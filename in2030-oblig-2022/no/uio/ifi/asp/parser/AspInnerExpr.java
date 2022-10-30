@@ -25,13 +25,11 @@ public class AspInnerExpr extends AspAtom{
 
     @Override
     public void prettyPrint() {
-        // -- Must be changed in part 2:
         prettyWrite("("); expr.prettyPrint(); prettyWrite(")");
     }
 
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // -- Must be changed in part 4:
         return expr.eval(curScope);
     }
 }

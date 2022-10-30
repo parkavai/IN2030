@@ -28,7 +28,6 @@ public class AspGlobalStmt extends AspSmallStmt{
     
     @Override
     public void prettyPrint() {
-        // -- Must be changed in part 2:
         prettyWrite("global ");
         nameList.get(0).prettyPrint();
         for(int i = 1; i < nameList.size(); i++){
@@ -38,7 +37,6 @@ public class AspGlobalStmt extends AspSmallStmt{
 
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // -- Must be changed in part 4:
         for(AspName v: nameList){
             curScope.registerGlobalName(v.value);
         }

@@ -34,7 +34,6 @@ class AspFactor extends AspSyntax {
 
     @Override
     public void prettyPrint() {
-        // -- Must be changed in part 2:
         for(int i = 0; i < primaryList.size(); i++){
             if(i < factorPrefixList.size()){
                 factorPrefixList.get(i).prettyPrint();

@@ -25,7 +25,6 @@ public class AspStringLiteral extends AspAtom {
 
     @Override
     public void prettyPrint() {
-        // -- Must be changed in part 2:
         if(string.isEmpty()){
             prettyWrite("");
         }
@@ -37,7 +36,6 @@ public class AspStringLiteral extends AspAtom {
 
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // -- Must be changed in part 4:
         return new RuntimeStringValue(string);
     }
 }

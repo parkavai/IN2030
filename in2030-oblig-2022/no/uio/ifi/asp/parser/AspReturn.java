@@ -24,7 +24,6 @@ public class AspReturn extends AspSmallStmt{
     
     @Override
     public void prettyPrint() {
-        // -- Must be changed in part 2:
         prettyWrite("return ");
         expr.prettyPrint();
     }
@@ -32,7 +31,6 @@ public class AspReturn extends AspSmallStmt{
     // Copied from: https://www.uio.no/studier/emner/matnat/ifi/IN2030/h21/forelesninger/uke-45-utdeling.pdf
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // -- Must be changed in part 4:
         RuntimeValue v = expr.eval(curScope);
         trace("return "+ v.showInfo());
         // Ensures that we cancel the chain of eval-methods run since we have come to a "return"-stmt to return the value. 

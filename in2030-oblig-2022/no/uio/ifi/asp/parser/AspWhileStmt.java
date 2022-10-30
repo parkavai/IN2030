@@ -29,7 +29,6 @@ public class AspWhileStmt extends AspCompoundStmt{
 
     @Override
     public void prettyPrint() {
-        // -- Must be changed in part 2:
         prettyWrite("while "); test.prettyPrint();
         prettyWrite(":"); body.prettyPrint();
     }

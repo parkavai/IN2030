@@ -37,7 +37,6 @@ public class AspForStmt extends AspCompoundStmt {
 
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // -- Must be changed in part 4:
         RuntimeValue e = expr.eval(curScope);
         if(e instanceof RuntimeListValue){
             RuntimeListValue pointer = (RuntimeListValue) e;

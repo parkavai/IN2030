@@ -31,7 +31,6 @@ class AspAndTest extends AspSyntax {
 
     @Override
     public void prettyPrint() {
-        // -- Must be changed in part 2:
         notTests.get(0).prettyPrint();
         for(int i = 1; i < notTests.size(); i++){
             prettyWrite(andList.get(i-1)); 
@@ -41,7 +40,6 @@ class AspAndTest extends AspSyntax {
 
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // -- Must be changed in part 4:
         RuntimeValue v = notTests.get(0).eval(curScope);
         for(int i = 1; i < notTests.size(); i++){
             if (! v.getBoolValue("and operand", this))

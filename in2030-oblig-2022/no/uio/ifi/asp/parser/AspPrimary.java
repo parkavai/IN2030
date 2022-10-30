@@ -36,7 +36,6 @@ public class AspPrimary extends AspSyntax {
 
     @Override
     public void prettyPrint() {
-        // -- Must be changed in part 2:
         atom.prettyPrint();
         if(isSuffix){
             for(int i = 0; i < primarySuffixList.size(); i++){
@@ -47,7 +46,6 @@ public class AspPrimary extends AspSyntax {
 
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // -- Must be changed in part 4:
         RuntimeValue v = atom.eval(curScope);
         if(isSuffix){
             ArrayList<RuntimeValue> arguments = new ArrayList<>();

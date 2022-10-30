@@ -35,7 +35,6 @@ public class AspListDisplay extends AspAtom {
 
     @Override
     public void prettyPrint() {
-        // -- Must be changed in part 2:
         prettyWrite("[");
         if(expr.size() > 1){
             for(int i = 0; i < expr.size(); i++){
@@ -50,7 +49,6 @@ public class AspListDisplay extends AspAtom {
 
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // -- Must be changed in part 4:
         ArrayList<RuntimeValue> v = new ArrayList<>();
         for(int i = 0; i < expr.size(); i++){
             v.add(expr.get(i).eval(curScope));

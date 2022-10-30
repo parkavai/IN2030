@@ -38,7 +38,6 @@ public class AspSuite extends AspSyntax {
 
     @Override
     public void prettyPrint() {
-        // -- Must be changed in part 2:
         if(isSmallStmtList){
             smallStmtList.prettyPrint();
         }
@@ -60,7 +59,6 @@ public class AspSuite extends AspSyntax {
 
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // -- Must be changed in part 4:
         RuntimeValue v = null;
         if(isSmallStmtList){
             v = smallStmtList.eval(curScope);

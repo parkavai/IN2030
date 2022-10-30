@@ -43,7 +43,6 @@ public class AspAssignment extends AspSmallStmt {
 
     @Override
     public void prettyPrint() {
-        // -- Must be changed in part 2:
         name.prettyPrint();
         if(isSubscription){
             for(int i = 0; i < subs.size(); i++){
@@ -57,7 +56,6 @@ public class AspAssignment extends AspSmallStmt {
 
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // -- Must be changed in part 4:
         RuntimeValue ex = expr.eval(curScope);
         if(isSubscription){
             // Iterate untill the last index

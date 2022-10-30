@@ -31,13 +31,11 @@ public class AspIntegerLiteral extends AspAtom {
 
     @Override
     public void prettyPrint() {
-        // -- Must be changed in part 2:
         prettyWrite(String.valueOf(intValue));
     }
 
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // -- Must be changed in part 4:
         return new RuntimeIntValue(intValue);
     }
 }

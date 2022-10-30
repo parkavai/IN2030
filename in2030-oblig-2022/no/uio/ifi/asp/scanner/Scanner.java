@@ -497,7 +497,6 @@ public class Scanner {
 	}
 
 	private String expandLeadingTabs(String s) {
-		// -- Must be changed in part 1:
 		String fixedString = "";
 		int n = 0;
 		int start = 0;
@@ -532,7 +531,6 @@ public class Scanner {
 
 	public boolean isCompOpr() {
 		TokenKind k = curToken().kind;
-		// -- Must be changed in part 2:
 		if(k == lessToken || k == greaterToken || k == doubleEqualToken || k == greaterEqualToken
 		|| k == lessEqualToken || k == notEqualToken) return true;
 		return false;
@@ -540,21 +538,18 @@ public class Scanner {
 
 	public boolean isFactorPrefix() {
 		TokenKind k = curToken().kind;
-		// -- Must be changed in part 2:
 		if(k == plusToken || k == minusToken) return true;
 		return false;
 	}
 
 	public boolean isFactorOpr() {
 		TokenKind k = curToken().kind;
-		// -- Must be changed in part 2:
 		if(k == astToken || k == slashToken || k == percentToken|| k == doubleSlashToken) return true;
 		return false;
 	}
 
 	public boolean isTermOpr() {
 		TokenKind k = curToken().kind;
-		// -- Must be changed in part 2:
 		if(k == plusToken || k == minusToken) return true;
 		return false;
 	}

@@ -38,7 +38,6 @@ public class AspSmallStmtList extends AspStmt {
 
     @Override
     public void prettyPrint() {
-        // -- Must be changed in part 2:
         smallStmt.get(0).prettyPrint();
         if(isSemi){
             prettyWrite("; ");
@@ -55,7 +54,6 @@ public class AspSmallStmtList extends AspStmt {
 
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        // -- Must be changed in part 4:
         RuntimeValue v = null;
         for(AspSmallStmt s: smallStmt){
             v = s.eval(curScope);
