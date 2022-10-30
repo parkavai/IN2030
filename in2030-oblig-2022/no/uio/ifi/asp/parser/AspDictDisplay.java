@@ -65,6 +65,7 @@ public class AspDictDisplay extends AspAtom{
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         HashMap<String, RuntimeValue> v = new HashMap<>();
+        // Insert all elements and keys to the hashmap
         for(int i = 0; i < exprList.size(); i++){
             String string = strList.get(i).string;
             RuntimeValue expr = exprList.get(i).eval(curScope);

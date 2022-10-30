@@ -58,7 +58,6 @@ public class AspPrimary extends AspSyntax {
                 else{
                     // Cast value to runtimelistvalue
                     RuntimeListValue list = (RuntimeListValue) v2; 
-                    // System.out.println(list.showInfo());
                     // Get the arguments from runtimelistvalue
                     if(list != null){
                         arguments = list.getList();
@@ -68,8 +67,7 @@ public class AspPrimary extends AspSyntax {
                     v = v.evalFuncCall(arguments, this);
                 }
             }
-        }
-        // If print is called, then we should write none after. 
+        } 
         if(v instanceof RuntimeNoneValue) trace("None");
         return v; 
     }

@@ -22,7 +22,6 @@ public class AspProgram extends AspSyntax {
 
         AspProgram ap = new AspProgram(s.curLineNum());
         while (s.curToken().kind != eofToken) {
-            // -- Must be changed in part 2:
             ap.isStmts = true;
             ap.stmts.add(AspStmt.parse(s));
         }
@@ -34,7 +33,6 @@ public class AspProgram extends AspSyntax {
 
     @Override
     public void prettyPrint() {
-        // -- Must be changed in part 2:
         if(isStmts){
             for(int i = 0; i < stmts.size(); i++){
                 stmts.get(i).prettyPrint();

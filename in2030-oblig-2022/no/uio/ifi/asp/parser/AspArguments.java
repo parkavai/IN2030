@@ -54,6 +54,7 @@ public class AspArguments extends AspPrimarySuffix{
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         if(isExpr){
             ArrayList<RuntimeValue> v = new ArrayList<>();
+            // Add all arguments to the list for RuntimeListValue
             for(int i = 0; i < expression.size(); i++){
                 v.add(expression.get(i).eval(curScope));
             }
