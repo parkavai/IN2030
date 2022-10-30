@@ -22,7 +22,7 @@ public class RuntimeIntValue extends RuntimeValue {
 
     @Override
     public String showInfo() {
-        return Long.toString(intValue);
+        return this.toString();
     }
 
     // Copied from Dag Langmyhr: https://screencast.uninett.no/relay/ansatt/daguio.no/2019/17.10/2746600/IN2030-42-1_-_20191017_110157_39.html

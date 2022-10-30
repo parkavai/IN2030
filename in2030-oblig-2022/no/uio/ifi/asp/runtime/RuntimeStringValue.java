@@ -17,12 +17,12 @@ public class RuntimeStringValue extends RuntimeValue{
 
     @Override
     public String toString() {
-        // Will have quotation marks around string
-        return "\'" + stringValue + "\'";
+        return stringValue;
     }
     
     @Override
     public String showInfo() {
+        // Will have quotation marks around string
         return "\'" + stringValue + "\'";
     }
 

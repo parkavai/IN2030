@@ -17,14 +17,14 @@ public class RuntimeFloatValue extends RuntimeValue {
 
     @Override
     public String toString() {
-        return Double.toString(floatValue);
+        return String.format("%.1f", floatValue);
     }
 
     @Override
     public String showInfo() {
-        return Double.toString(floatValue);
+        return this.toString();
     }
-
+    
     @Override
     public double getFloatValue(String what, AspSyntax where) {
         return floatValue;

@@ -23,7 +23,7 @@ public class RuntimeDictValue extends RuntimeValue {
         String prettyString = "{";
         int i = 0;
         for(String keys: runTimeDict.keySet()){
-            prettyString += keys; prettyString += ": "; prettyString += runTimeDict.get(keys);
+            prettyString += "\'" + keys + "\'"; prettyString += ": "; prettyString += runTimeDict.get(keys);
             if(i < runTimeDict.size()-1){
                 prettyString += ", ";
             }
@@ -35,11 +35,7 @@ public class RuntimeDictValue extends RuntimeValue {
 
     @Override
     public String toString() {
-        String prettyString = "";
-        for(RuntimeValue v: runTimeDict.values()){
-            prettyString += v.toString();
-        }
-        return prettyString;
+        return this.showInfo();
     }
 
     @Override
@@ -83,5 +79,12 @@ public class RuntimeDictValue extends RuntimeValue {
         }
         runtimeError("Type error for !=.", where);
         return null; // Required by the compiler.
+    }
+
+    @Override
+    public void evalAssignElem(RuntimeValue inx, RuntimeValue val, AspSyntax where) {
+        String key = (String) inx.getStringValue("{}", where);
+        // Sets the value in the arrayList at the specific index through "set()"
+        runTimeDict.put(key, val);
     }
 }

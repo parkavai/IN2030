@@ -36,11 +36,7 @@ public class RuntimeListValue extends RuntimeValue {
 
     @Override
     public String toString() {
-        String prettyString = "";
-        for(RuntimeValue v: runTimeList){
-            prettyString += v.toString();
-        }
-        return prettyString;
+        return this.showInfo();
     }
 
     @Override
@@ -106,7 +102,7 @@ public class RuntimeListValue extends RuntimeValue {
     @Override
     public void evalAssignElem(RuntimeValue inx, RuntimeValue val, AspSyntax where) {
         int index = (int) inx.getIntValue("[]", where);
-        // Is it necessary to check if index is less than length?
+        // Sets the value in the arrayList at the specific index through "set()"
         if(index < evalLen(where).getIntValue("[]", where)){
             runTimeList.set(index, val); 
         }

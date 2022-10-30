@@ -67,7 +67,9 @@ public class AspAssignment extends AspSmallStmt {
             }
             // The last subscription value 
             AspSubscription last = subs.get(subs.size()-1);
-            v.evalAssignElem(last.eval(curScope), ex, this);
+            RuntimeValue l = last.eval(curScope);
+            v.evalAssignElem(l, ex, this);
+            trace(name.value + "[" + l.toString() + "]" + " = " + ex.toString());
         }
         else{
             if(curScope.hasGlobalName(name.value)){
