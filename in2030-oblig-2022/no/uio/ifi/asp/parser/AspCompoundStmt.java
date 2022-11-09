@@ -27,11 +27,11 @@ abstract class AspCompoundStmt extends AspStmt{
             case defToken:
                 css = AspFuncDef.parse(s); break;
             default:
-                parserError("Expected an expression stmt but found a " +
+                parserError("Expected a compound stmt but found a " +
             s.curToken().kind + "!", s.curLineNum());
         }
 
-        leaveParser("compund stmt");
+        leaveParser("compound stmt");
         return css;
     }
 

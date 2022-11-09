@@ -23,6 +23,8 @@ abstract class AspStmt extends AspSyntax {
 			case stringToken: 
 			case trueToken: 
 			case falseToken: 
+            case plusToken:
+            case minusToken:
 			case noneToken:
 			case leftParToken:
 			case leftBraceToken:
@@ -39,7 +41,7 @@ abstract class AspStmt extends AspSyntax {
             case defToken:
             ss = AspCompoundStmt.parse(s); break; 
             default:
-            parserError("Expected an expression stmt but found a " +
+            parserError("Expected a stmt but found a " +
             s.curToken().kind + "!", s.curLineNum());
         }
 

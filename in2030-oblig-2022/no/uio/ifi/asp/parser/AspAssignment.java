@@ -67,7 +67,7 @@ public class AspAssignment extends AspSmallStmt {
             AspSubscription last = subs.get(subs.size()-1);
             RuntimeValue l = last.eval(curScope);
             v.evalAssignElem(l, ex, this);
-            trace(name.value + "[" + l.toString() + "]" + " = " + ex.toString());
+            trace(name.value + "[" + l.showInfo() + "]" + " = " + ex.showInfo());
         }
         else{
             if(curScope.hasGlobalName(name.value)){
@@ -76,7 +76,7 @@ public class AspAssignment extends AspSmallStmt {
             else{
                 curScope.assign(name.value, ex);
             }
-            trace(name.value + " = " + ex.toString());
+            trace(name.value + " = " + ex.showInfo());
         }
         return null;
     }

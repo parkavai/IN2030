@@ -1,2 +1,4 @@
-a = {}
-a["halla"] = 2
+
+# En hyggelig hilsen
+navn='Dag'
+print ("Hei,",navn) 

@@ -25,7 +25,7 @@ public class RuntimeListValue extends RuntimeValue {
     public String showInfo(){
         String showString = "[";
         for(int i = 0; i < runTimeList.size(); i++){
-            showString += runTimeList.get(i).toString();
+            showString += runTimeList.get(i).showInfo();
             if(i < runTimeList.size()-1){
                 showString += ", ";
             }

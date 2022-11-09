@@ -59,11 +59,14 @@ public class AspPrimary extends AspSyntax {
                     // Cast value to runtimelistvalue
                     RuntimeListValue list = (RuntimeListValue) v2; 
                     // Get the arguments from runtimelistvalue
+                    AspName functionName = (AspName) atom; 
                     if(list != null){
                         arguments = list.getList();
+                        trace("Call function " + functionName.value + " with params: " + list.showInfo());
                     }
-                    AspName functionName = (AspName) atom; 
-                    trace("Call function " + functionName.value + " with params: " + arguments);
+                    else{
+                        trace("Call function " + functionName.value + " with params: []");
+                    }
                     v = v.evalFuncCall(arguments, this);
                 }
             }
