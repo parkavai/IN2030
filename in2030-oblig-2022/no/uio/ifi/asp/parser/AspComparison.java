@@ -42,7 +42,6 @@ class AspComparison extends AspSyntax {
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         RuntimeValue v = terms.get(0).eval(curScope);
         for(int i = 1; i < terms.size(); i++){
-            v = terms.get(i-1).eval(curScope);
             TokenKind k = compList.get(i-1).kind; 
             RuntimeValue v2 = terms.get(i).eval(curScope);
             switch (k){
@@ -61,8 +60,9 @@ class AspComparison extends AspSyntax {
                 default:
                     Main.panic("Illegal comparison operator: " + k + "!");
             }
-            if (! v.getBoolValue("and operand", this))
+            if (! v.getBoolValue("and operand", this)){
                 return v;
+            }
         }
         return v;
     }
