@@ -1,3 +1,55 @@
-Trace line 3: navn = 'parka'
-Trace line 4: Call function print with params: ['Hei,', 'parka']
-Trace line 4: None
+<program>
+   1: 1 <= 2 <= 3
+  <stmt>
+    <small stmt list>
+      <small stmt>
+        <expr stmt>
+          <expr>
+            <and test>
+              <not test>
+                <comparison>
+                  <term>
+                    <factor>
+                      <primary>
+                        <atom>
+                          <integer literal>
+                          </integer literal>
+                        </atom>
+                      </primary>
+                    </factor>
+                  </term>
+                  <comp opr>
+                  </comp opr>
+                  <term>
+                    <factor>
+                      <primary>
+                        <atom>
+                          <integer literal>
+                          </integer literal>
+                        </atom>
+                      </primary>
+                    </factor>
+                  </term>
+                  <comp opr>
+                  </comp opr>
+                  <term>
+                    <factor>
+                      <primary>
+                        <atom>
+                          <integer literal>
+                          </integer literal>
+                        </atom>
+                      </primary>
+                    </factor>
+                  </term>
+                </comparison>
+              </not test>
+            </and test>
+          </expr>
+        </expr stmt>
+      </small stmt>
+    </small stmt list>
+  </stmt>
+</program>
+
+1 <= 2 <= 3

@@ -41,29 +41,32 @@ class AspComparison extends AspSyntax {
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         RuntimeValue v = terms.get(0).eval(curScope);
+        RuntimeValue boolValue = v;
+
         for(int i = 1; i < terms.size(); i++){
             TokenKind k = compList.get(i-1).kind; 
             RuntimeValue v2 = terms.get(i).eval(curScope);
             switch (k){
                 case lessToken:
-                    v = v.evalLess(v2, this); break;
+                    boolValue = v.evalLess(v2, this); break;
                 case greaterToken:
-                    v = v.evalGreater(v2, this); break;
+                    boolValue = v.evalGreater(v2, this); break;
                 case doubleEqualToken:
-                    v = v.evalEqual(v2, this); break;
+                    boolValue = v.evalEqual(v2, this); break;
                 case greaterEqualToken:
-                    v = v.evalGreaterEqual(v2, this); break;
+                    boolValue = v.evalGreaterEqual(v2, this); break;
                 case lessEqualToken:
-                    v = v.evalLessEqual(v2, this); break;
+                    boolValue = v.evalLessEqual(v2, this); break;
                 case notEqualToken:
-                    v = v.evalNotEqual(v2, this); break;
+                    boolValue = v.evalNotEqual(v2, this); break;
                 default:
                     Main.panic("Illegal comparison operator: " + k + "!");
             }
-            if (! v.getBoolValue("and operand", this)){
-                return v;
+            if (! boolValue.getBoolValue("and operand", this)){
+                return boolValue;
             }
+            v = v2;
         }
-        return v;
+        return boolValue;
     }
 }

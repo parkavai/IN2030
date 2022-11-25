@@ -1,4 +1,1 @@
-
-# En hyggelig hilsen
-navn='Dag'
-print ("Hei,",navn) 
+1 <= 2 <= 3
