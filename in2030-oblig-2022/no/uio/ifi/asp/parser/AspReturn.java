@@ -34,7 +34,7 @@ public class AspReturn extends AspSmallStmt{
         RuntimeValue v = expr.eval(curScope);
         trace("return "+ v.showInfo());
         // Ensures that we cancel the chain of eval-methods run since we have come to a "return"-stmt to return the value. 
-        throw new RuntimeReturnValue(v,lineNum);
+        throw new RuntimeReturnValue(v, lineNum);
     }
 
 }

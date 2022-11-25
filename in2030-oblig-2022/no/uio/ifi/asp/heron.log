@@ -1,8 +1,8 @@
 Trace line 5: def pow
 Trace line 14: def rough_log
 Trace line 22: def sqrt
-Trace line 38: Call function input with params: [Give a number: ]
-Trace line 38: Call function float with params: [2]
+Trace line 38: Call function input with params: ['Give a number: ']
+Trace line 38: Call function float with params: ['2']
 Trace line 38: v = 2,0
 Trace line 39: Call function sqrt with params: [2,0]
 Trace line 23: x = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -48,5 +48,5 @@ Trace line 7: Call function pow with params: [1,4, 1]
 Trace line 6: else: ....
 Trace line 11: return 1,4
 Trace line 7: return 2,0
-Trace line 40: Call function print with params: [1,4, squared is, 2,0]
+Trace line 40: Call function print with params: [1,4, 'squared is', 2,0]
 Trace line 40: None
