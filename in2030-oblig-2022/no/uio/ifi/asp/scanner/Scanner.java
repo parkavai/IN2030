@@ -496,6 +496,7 @@ public class Scanner {
 		return indent;
 	}
 
+	// Inspired from: https://www.uio.no/studier/emner/matnat/ifi/IN2030/h21/ukeoppgaver/forslag-36.pdf
 	private String expandLeadingTabs(String s) {
 		String fixedString = "";
 		int n = 0;

@@ -65,6 +65,7 @@ class AspComparison extends AspSyntax {
             if (! boolValue.getBoolValue("and operand", this)){
                 return boolValue;
             }
+            // Ensures that "v" isn´t a "True" or "False" to ensure no errors
             v = v2;
         }
         return boolValue;

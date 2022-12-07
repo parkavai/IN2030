@@ -9,7 +9,6 @@ import no.uio.ifi.asp.scanner.*;
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 public class AspProgram extends AspSyntax {
-    // -- Must be changed in part 2:
     ArrayList<AspStmt> stmts = new ArrayList<>();
     Boolean isStmts = false;
 
