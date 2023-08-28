@@ -1,102 +1,908 @@
-Trace line 4: def boblesorter
-Trace line 15: data = [3, 17, -3, 0, 3, 1, 12]
-Trace line 16: ombyttinger = 0
-Trace line 17: Call function boblesorter with params: [[3, 17, -3, 0, 3, 1, 12]]
-Trace line 6: while True: ...
-Trace line 7: endret = False
-Trace line 8: Call function len with params: [[3, 17, -3, 0, 3, 1, 12]]
-Trace line 8: Call function range with params: [1, 7]
-Trace line 8: for #0: i = 1
-Trace line 8: for #1: i = 2
-Trace line 9: if True alt #0: ...
-Trace line 10: t = 17
-Trace line 10: a[1] = -3
-Trace line 10: a[2] = 17
-Trace line 11: ombyttinger = 1
-Trace line 12: endret = True
-Trace line 8: for #2: i = 3
-Trace line 9: if True alt #0: ...
-Trace line 10: t = 17
-Trace line 10: a[2] = 0
-Trace line 10: a[3] = 17
-Trace line 11: ombyttinger = 2
-Trace line 12: endret = True
-Trace line 8: for #3: i = 4
-Trace line 9: if True alt #0: ...
-Trace line 10: t = 17
-Trace line 10: a[3] = 3
-Trace line 10: a[4] = 17
-Trace line 11: ombyttinger = 3
-Trace line 12: endret = True
-Trace line 8: for #4: i = 5
-Trace line 9: if True alt #0: ...
-Trace line 10: t = 17
-Trace line 10: a[4] = 1
-Trace line 10: a[5] = 17
-Trace line 11: ombyttinger = 4
-Trace line 12: endret = True
-Trace line 8: for #5: i = 6
-Trace line 9: if True alt #0: ...
-Trace line 10: t = 17
-Trace line 10: a[5] = 12
-Trace line 10: a[6] = 17
-Trace line 11: ombyttinger = 5
-Trace line 12: endret = True
-Trace line 6: while True: ...
-Trace line 7: endret = False
-Trace line 8: Call function len with params: [[3, -3, 0, 3, 1, 12, 17]]
-Trace line 8: Call function range with params: [1, 7]
-Trace line 8: for #0: i = 1
-Trace line 9: if True alt #0: ...
-Trace line 10: t = 3
-Trace line 10: a[0] = -3
-Trace line 10: a[1] = 3
-Trace line 11: ombyttinger = 6
-Trace line 12: endret = True
-Trace line 8: for #1: i = 2
-Trace line 9: if True alt #0: ...
-Trace line 10: t = 3
-Trace line 10: a[1] = 0
-Trace line 10: a[2] = 3
-Trace line 11: ombyttinger = 7
-Trace line 12: endret = True
-Trace line 8: for #2: i = 3
-Trace line 8: for #3: i = 4
-Trace line 9: if True alt #0: ...
-Trace line 10: t = 3
-Trace line 10: a[3] = 1
-Trace line 10: a[4] = 3
-Trace line 11: ombyttinger = 8
-Trace line 12: endret = True
-Trace line 8: for #4: i = 5
-Trace line 8: for #5: i = 6
-Trace line 6: while True: ...
-Trace line 7: endret = False
-Trace line 8: Call function len with params: [[-3, 0, 3, 1, 3, 12, 17]]
-Trace line 8: Call function range with params: [1, 7]
-Trace line 8: for #0: i = 1
-Trace line 8: for #1: i = 2
-Trace line 8: for #2: i = 3
-Trace line 9: if True alt #0: ...
-Trace line 10: t = 3
-Trace line 10: a[2] = 1
-Trace line 10: a[3] = 3
-Trace line 11: ombyttinger = 9
-Trace line 12: endret = True
-Trace line 8: for #3: i = 4
-Trace line 8: for #4: i = 5
-Trace line 8: for #5: i = 6
-Trace line 6: while True: ...
-Trace line 7: endret = False
-Trace line 8: Call function len with params: [[-3, 0, 1, 3, 3, 12, 17]]
-Trace line 8: Call function range with params: [1, 7]
-Trace line 8: for #0: i = 1
-Trace line 8: for #1: i = 2
-Trace line 8: for #2: i = 3
-Trace line 8: for #3: i = 4
-Trace line 8: for #4: i = 5
-Trace line 8: for #5: i = 6
-Trace line 13: if True alt #0: ...
-Trace line 13: return 0
-Trace line 18: Call function print with params: ['Resultatet etter', 9, 'ombyttinger er', [-3, 0, 1, 3, 3, 12, 17]]
-Trace line 18: None
+<program>
+   1: # Boblesortering
+   2: # (Den enkleste men akk så ineffektive sorteringsmetoden)
+   3: 
+   4: def boblesorter (a):
+  <stmt>
+    <compound stmt>
+      <func def>
+        <name>
+        </name>
+        <name>
+        </name>
+        <suite>
+   5:     global ombyttinger
+          <stmt>
+            <small stmt list>
+              <small stmt>
+                <global>
+                  <name>
+                  </name>
+                </global>
+              </small stmt>
+            </small stmt list>
+          </stmt>
+   6:     while True:
+          <stmt>
+            <compound stmt>
+              <while stmt>
+                <expr>
+                  <and test>
+                    <not test>
+                      <comparison>
+                        <term>
+                          <factor>
+                            <primary>
+                              <atom>
+                                <boolean literal>
+                                </boolean literal>
+                              </atom>
+                            </primary>
+                          </factor>
+                        </term>
+                      </comparison>
+                    </not test>
+                  </and test>
+                </expr>
+                <suite>
+   7:         endret = False
+                  <stmt>
+                    <small stmt list>
+                      <small stmt>
+                        <assignment>
+                          <name>
+                          </name>
+                          <expr>
+                            <and test>
+                              <not test>
+                                <comparison>
+                                  <term>
+                                    <factor>
+                                      <primary>
+                                        <atom>
+                                          <boolean literal>
+                                          </boolean literal>
+                                        </atom>
+                                      </primary>
+                                    </factor>
+                                  </term>
+                                </comparison>
+                              </not test>
+                            </and test>
+                          </expr>
+                        </assignment>
+                      </small stmt>
+                    </small stmt list>
+                  </stmt>
+   8:         for i in range(1,len(a)):
+                  <stmt>
+                    <compound stmt>
+                      <for stmt>
+                        <name>
+                        </name>
+                        <expr>
+                          <and test>
+                            <not test>
+                              <comparison>
+                                <term>
+                                  <factor>
+                                    <primary>
+                                      <atom>
+                                        <name>
+                                        </name>
+                                      </atom>
+                                      <primary suffix>
+                                        <arguments>
+                                          <expr>
+                                            <and test>
+                                              <not test>
+                                                <comparison>
+                                                  <term>
+                                                    <factor>
+                                                      <primary>
+                                                        <atom>
+                                                          <integer literal>
+                                                          </integer literal>
+                                                        </atom>
+                                                      </primary>
+                                                    </factor>
+                                                  </term>
+                                                </comparison>
+                                              </not test>
+                                            </and test>
+                                          </expr>
+                                          <expr>
+                                            <and test>
+                                              <not test>
+                                                <comparison>
+                                                  <term>
+                                                    <factor>
+                                                      <primary>
+                                                        <atom>
+                                                          <name>
+                                                          </name>
+                                                        </atom>
+                                                        <primary suffix>
+                                                          <arguments>
+                                                            <expr>
+                                                              <and test>
+                                                                <not test>
+                                                                  <comparison>
+                                                                    <term>
+                                                                      <factor>
+                                                                        <primary>
+                                                                          <atom>
+                                                                            <name>
+                                                                            </name>
+                                                                          </atom>
+                                                                        </primary>
+                                                                      </factor>
+                                                                    </term>
+                                                                  </comparison>
+                                                                </not test>
+                                                              </and test>
+                                                            </expr>
+                                                          </arguments>
+                                                        </primary suffix>
+                                                      </primary>
+                                                    </factor>
+                                                  </term>
+                                                </comparison>
+                                              </not test>
+                                            </and test>
+                                          </expr>
+                                        </arguments>
+                                      </primary suffix>
+                                    </primary>
+                                  </factor>
+                                </term>
+                              </comparison>
+                            </not test>
+                          </and test>
+                        </expr>
+                        <suite>
+   9:             if a[i-1] > a[i]:
+                          <stmt>
+                            <compound stmt>
+                              <if stmt>
+                                <expr>
+                                  <and test>
+                                    <not test>
+                                      <comparison>
+                                        <term>
+                                          <factor>
+                                            <primary>
+                                              <atom>
+                                                <name>
+                                                </name>
+                                              </atom>
+                                              <primary suffix>
+                                                <subscription>
+                                                  <expr>
+                                                    <and test>
+                                                      <not test>
+                                                        <comparison>
+                                                          <term>
+                                                            <factor>
+                                                              <primary>
+                                                                <atom>
+                                                                  <name>
+                                                                  </name>
+                                                                </atom>
+                                                              </primary>
+                                                            </factor>
+                                                            <term opr>
+                                                            </term opr>
+                                                            <factor>
+                                                              <primary>
+                                                                <atom>
+                                                                  <integer literal>
+                                                                  </integer literal>
+                                                                </atom>
+                                                              </primary>
+                                                            </factor>
+                                                          </term>
+                                                        </comparison>
+                                                      </not test>
+                                                    </and test>
+                                                  </expr>
+                                                </subscription>
+                                              </primary suffix>
+                                            </primary>
+                                          </factor>
+                                        </term>
+                                        <comp opr>
+                                        </comp opr>
+                                        <term>
+                                          <factor>
+                                            <primary>
+                                              <atom>
+                                                <name>
+                                                </name>
+                                              </atom>
+                                              <primary suffix>
+                                                <subscription>
+                                                  <expr>
+                                                    <and test>
+                                                      <not test>
+                                                        <comparison>
+                                                          <term>
+                                                            <factor>
+                                                              <primary>
+                                                                <atom>
+                                                                  <name>
+                                                                  </name>
+                                                                </atom>
+                                                              </primary>
+                                                            </factor>
+                                                          </term>
+                                                        </comparison>
+                                                      </not test>
+                                                    </and test>
+                                                  </expr>
+                                                </subscription>
+                                              </primary suffix>
+                                            </primary>
+                                          </factor>
+                                        </term>
+                                      </comparison>
+                                    </not test>
+                                  </and test>
+                                </expr>
+                                <suite>
+  10:                 t = a[i-1];  a[i-1] = a[i];  a[i] = t
+                                  <stmt>
+                                    <small stmt list>
+                                      <small stmt>
+                                        <assignment>
+                                          <name>
+                                          </name>
+                                          <expr>
+                                            <and test>
+                                              <not test>
+                                                <comparison>
+                                                  <term>
+                                                    <factor>
+                                                      <primary>
+                                                        <atom>
+                                                          <name>
+                                                          </name>
+                                                        </atom>
+                                                        <primary suffix>
+                                                          <subscription>
+                                                            <expr>
+                                                              <and test>
+                                                                <not test>
+                                                                  <comparison>
+                                                                    <term>
+                                                                      <factor>
+                                                                        <primary>
+                                                                          <atom>
+                                                                            <name>
+                                                                            </name>
+                                                                          </atom>
+                                                                        </primary>
+                                                                      </factor>
+                                                                      <term opr>
+                                                                      </term opr>
+                                                                      <factor>
+                                                                        <primary>
+                                                                          <atom>
+                                                                            <integer literal>
+                                                                            </integer literal>
+                                                                          </atom>
+                                                                        </primary>
+                                                                      </factor>
+                                                                    </term>
+                                                                  </comparison>
+                                                                </not test>
+                                                              </and test>
+                                                            </expr>
+                                                          </subscription>
+                                                        </primary suffix>
+                                                      </primary>
+                                                    </factor>
+                                                  </term>
+                                                </comparison>
+                                              </not test>
+                                            </and test>
+                                          </expr>
+                                        </assignment>
+                                      </small stmt>
+                                      <small stmt>
+                                        <assignment>
+                                          <name>
+                                          </name>
+                                          <subscription>
+                                            <expr>
+                                              <and test>
+                                                <not test>
+                                                  <comparison>
+                                                    <term>
+                                                      <factor>
+                                                        <primary>
+                                                          <atom>
+                                                            <name>
+                                                            </name>
+                                                          </atom>
+                                                        </primary>
+                                                      </factor>
+                                                      <term opr>
+                                                      </term opr>
+                                                      <factor>
+                                                        <primary>
+                                                          <atom>
+                                                            <integer literal>
+                                                            </integer literal>
+                                                          </atom>
+                                                        </primary>
+                                                      </factor>
+                                                    </term>
+                                                  </comparison>
+                                                </not test>
+                                              </and test>
+                                            </expr>
+                                          </subscription>
+                                          <expr>
+                                            <and test>
+                                              <not test>
+                                                <comparison>
+                                                  <term>
+                                                    <factor>
+                                                      <primary>
+                                                        <atom>
+                                                          <name>
+                                                          </name>
+                                                        </atom>
+                                                        <primary suffix>
+                                                          <subscription>
+                                                            <expr>
+                                                              <and test>
+                                                                <not test>
+                                                                  <comparison>
+                                                                    <term>
+                                                                      <factor>
+                                                                        <primary>
+                                                                          <atom>
+                                                                            <name>
+                                                                            </name>
+                                                                          </atom>
+                                                                        </primary>
+                                                                      </factor>
+                                                                    </term>
+                                                                  </comparison>
+                                                                </not test>
+                                                              </and test>
+                                                            </expr>
+                                                          </subscription>
+                                                        </primary suffix>
+                                                      </primary>
+                                                    </factor>
+                                                  </term>
+                                                </comparison>
+                                              </not test>
+                                            </and test>
+                                          </expr>
+                                        </assignment>
+                                      </small stmt>
+                                      <small stmt>
+                                        <assignment>
+                                          <name>
+                                          </name>
+                                          <subscription>
+                                            <expr>
+                                              <and test>
+                                                <not test>
+                                                  <comparison>
+                                                    <term>
+                                                      <factor>
+                                                        <primary>
+                                                          <atom>
+                                                            <name>
+                                                            </name>
+                                                          </atom>
+                                                        </primary>
+                                                      </factor>
+                                                    </term>
+                                                  </comparison>
+                                                </not test>
+                                              </and test>
+                                            </expr>
+                                          </subscription>
+                                          <expr>
+                                            <and test>
+                                              <not test>
+                                                <comparison>
+                                                  <term>
+                                                    <factor>
+                                                      <primary>
+                                                        <atom>
+                                                          <name>
+                                                          </name>
+                                                        </atom>
+                                                      </primary>
+                                                    </factor>
+                                                  </term>
+                                                </comparison>
+                                              </not test>
+                                            </and test>
+                                          </expr>
+                                        </assignment>
+                                      </small stmt>
+                                    </small stmt list>
+                                  </stmt>
+  11:                 ombyttinger = ombyttinger + 1
+                                  <stmt>
+                                    <small stmt list>
+                                      <small stmt>
+                                        <assignment>
+                                          <name>
+                                          </name>
+                                          <expr>
+                                            <and test>
+                                              <not test>
+                                                <comparison>
+                                                  <term>
+                                                    <factor>
+                                                      <primary>
+                                                        <atom>
+                                                          <name>
+                                                          </name>
+                                                        </atom>
+                                                      </primary>
+                                                    </factor>
+                                                    <term opr>
+                                                    </term opr>
+                                                    <factor>
+                                                      <primary>
+                                                        <atom>
+                                                          <integer literal>
+                                                          </integer literal>
+                                                        </atom>
+                                                      </primary>
+                                                    </factor>
+                                                  </term>
+                                                </comparison>
+                                              </not test>
+                                            </and test>
+                                          </expr>
+                                        </assignment>
+                                      </small stmt>
+                                    </small stmt list>
+                                  </stmt>
+  12:                 endret = True
+                                  <stmt>
+                                    <small stmt list>
+                                      <small stmt>
+                                        <assignment>
+                                          <name>
+                                          </name>
+                                          <expr>
+                                            <and test>
+                                              <not test>
+                                                <comparison>
+                                                  <term>
+                                                    <factor>
+                                                      <primary>
+                                                        <atom>
+                                                          <boolean literal>
+                                                          </boolean literal>
+                                                        </atom>
+                                                      </primary>
+                                                    </factor>
+                                                  </term>
+                                                </comparison>
+                                              </not test>
+                                            </and test>
+                                          </expr>
+                                        </assignment>
+                                      </small stmt>
+                                    </small stmt list>
+                                  </stmt>
+  13:         if not endret: return 0
+                                </suite>
+                              </if stmt>
+                            </compound stmt>
+                          </stmt>
+                        </suite>
+                      </for stmt>
+                    </compound stmt>
+                  </stmt>
+                  <stmt>
+                    <compound stmt>
+                      <if stmt>
+                        <expr>
+                          <and test>
+                            <not test>
+                              <comparison>
+                                <term>
+                                  <factor>
+                                    <primary>
+                                      <atom>
+                                        <name>
+                                        </name>
+                                      </atom>
+                                    </primary>
+                                  </factor>
+                                </term>
+                              </comparison>
+                            </not test>
+                          </and test>
+                        </expr>
+                        <suite>
+                          <small stmt list>
+                            <small stmt>
+                              <return stmt>
+                                <expr>
+                                  <and test>
+                                    <not test>
+                                      <comparison>
+                                        <term>
+                                          <factor>
+                                            <primary>
+                                              <atom>
+                                                <integer literal>
+                                                </integer literal>
+                                              </atom>
+                                            </primary>
+                                          </factor>
+                                        </term>
+                                      </comparison>
+                                    </not test>
+                                  </and test>
+                                </expr>
+                              </return stmt>
+                            </small stmt>
+                          </small stmt list>
+                        </suite>
+  14: 
+  15: data = [ 3, 17, -3, 0, 3, 1, 12 ]
+                      </if stmt>
+                    </compound stmt>
+                  </stmt>
+                </suite>
+              </while stmt>
+            </compound stmt>
+          </stmt>
+        </suite>
+      </func def>
+    </compound stmt>
+  </stmt>
+  <stmt>
+    <small stmt list>
+      <small stmt>
+        <assignment>
+          <name>
+          </name>
+          <expr>
+            <and test>
+              <not test>
+                <comparison>
+                  <term>
+                    <factor>
+                      <primary>
+                        <atom>
+                          <list display>
+                            <expr>
+                              <and test>
+                                <not test>
+                                  <comparison>
+                                    <term>
+                                      <factor>
+                                        <primary>
+                                          <atom>
+                                            <integer literal>
+                                            </integer literal>
+                                          </atom>
+                                        </primary>
+                                      </factor>
+                                    </term>
+                                  </comparison>
+                                </not test>
+                              </and test>
+                            </expr>
+                            <expr>
+                              <and test>
+                                <not test>
+                                  <comparison>
+                                    <term>
+                                      <factor>
+                                        <primary>
+                                          <atom>
+                                            <integer literal>
+                                            </integer literal>
+                                          </atom>
+                                        </primary>
+                                      </factor>
+                                    </term>
+                                  </comparison>
+                                </not test>
+                              </and test>
+                            </expr>
+                            <expr>
+                              <and test>
+                                <not test>
+                                  <comparison>
+                                    <term>
+                                      <factor>
+                                        <factor prefix>
+                                        </factor prefix>
+                                        <primary>
+                                          <atom>
+                                            <integer literal>
+                                            </integer literal>
+                                          </atom>
+                                        </primary>
+                                      </factor>
+                                    </term>
+                                  </comparison>
+                                </not test>
+                              </and test>
+                            </expr>
+                            <expr>
+                              <and test>
+                                <not test>
+                                  <comparison>
+                                    <term>
+                                      <factor>
+                                        <primary>
+                                          <atom>
+                                            <integer literal>
+                                            </integer literal>
+                                          </atom>
+                                        </primary>
+                                      </factor>
+                                    </term>
+                                  </comparison>
+                                </not test>
+                              </and test>
+                            </expr>
+                            <expr>
+                              <and test>
+                                <not test>
+                                  <comparison>
+                                    <term>
+                                      <factor>
+                                        <primary>
+                                          <atom>
+                                            <integer literal>
+                                            </integer literal>
+                                          </atom>
+                                        </primary>
+                                      </factor>
+                                    </term>
+                                  </comparison>
+                                </not test>
+                              </and test>
+                            </expr>
+                            <expr>
+                              <and test>
+                                <not test>
+                                  <comparison>
+                                    <term>
+                                      <factor>
+                                        <primary>
+                                          <atom>
+                                            <integer literal>
+                                            </integer literal>
+                                          </atom>
+                                        </primary>
+                                      </factor>
+                                    </term>
+                                  </comparison>
+                                </not test>
+                              </and test>
+                            </expr>
+                            <expr>
+                              <and test>
+                                <not test>
+                                  <comparison>
+                                    <term>
+                                      <factor>
+                                        <primary>
+                                          <atom>
+                                            <integer literal>
+                                            </integer literal>
+                                          </atom>
+                                        </primary>
+                                      </factor>
+                                    </term>
+                                  </comparison>
+                                </not test>
+                              </and test>
+                            </expr>
+                          </list display>
+                        </atom>
+                      </primary>
+                    </factor>
+                  </term>
+                </comparison>
+              </not test>
+            </and test>
+          </expr>
+        </assignment>
+      </small stmt>
+    </small stmt list>
+  </stmt>
+  16: ombyttinger = 0
+  <stmt>
+    <small stmt list>
+      <small stmt>
+        <assignment>
+          <name>
+          </name>
+          <expr>
+            <and test>
+              <not test>
+                <comparison>
+                  <term>
+                    <factor>
+                      <primary>
+                        <atom>
+                          <integer literal>
+                          </integer literal>
+                        </atom>
+                      </primary>
+                    </factor>
+                  </term>
+                </comparison>
+              </not test>
+            </and test>
+          </expr>
+        </assignment>
+      </small stmt>
+    </small stmt list>
+  </stmt>
+  17: boblesorter(data)
+  <stmt>
+    <small stmt list>
+      <small stmt>
+        <expr stmt>
+          <expr>
+            <and test>
+              <not test>
+                <comparison>
+                  <term>
+                    <factor>
+                      <primary>
+                        <atom>
+                          <name>
+                          </name>
+                        </atom>
+                        <primary suffix>
+                          <arguments>
+                            <expr>
+                              <and test>
+                                <not test>
+                                  <comparison>
+                                    <term>
+                                      <factor>
+                                        <primary>
+                                          <atom>
+                                            <name>
+                                            </name>
+                                          </atom>
+                                        </primary>
+                                      </factor>
+                                    </term>
+                                  </comparison>
+                                </not test>
+                              </and test>
+                            </expr>
+                          </arguments>
+                        </primary suffix>
+                      </primary>
+                    </factor>
+                  </term>
+                </comparison>
+              </not test>
+            </and test>
+          </expr>
+        </expr stmt>
+      </small stmt>
+    </small stmt list>
+  </stmt>
+  18: print("Resultatet etter", ombyttinger, "ombyttinger er", data)
+  <stmt>
+    <small stmt list>
+      <small stmt>
+        <expr stmt>
+          <expr>
+            <and test>
+              <not test>
+                <comparison>
+                  <term>
+                    <factor>
+                      <primary>
+                        <atom>
+                          <name>
+                          </name>
+                        </atom>
+                        <primary suffix>
+                          <arguments>
+                            <expr>
+                              <and test>
+                                <not test>
+                                  <comparison>
+                                    <term>
+                                      <factor>
+                                        <primary>
+                                          <atom>
+                                            <string literal>
+                                            </string literal>
+                                          </atom>
+                                        </primary>
+                                      </factor>
+                                    </term>
+                                  </comparison>
+                                </not test>
+                              </and test>
+                            </expr>
+                            <expr>
+                              <and test>
+                                <not test>
+                                  <comparison>
+                                    <term>
+                                      <factor>
+                                        <primary>
+                                          <atom>
+                                            <name>
+                                            </name>
+                                          </atom>
+                                        </primary>
+                                      </factor>
+                                    </term>
+                                  </comparison>
+                                </not test>
+                              </and test>
+                            </expr>
+                            <expr>
+                              <and test>
+                                <not test>
+                                  <comparison>
+                                    <term>
+                                      <factor>
+                                        <primary>
+                                          <atom>
+                                            <string literal>
+                                            </string literal>
+                                          </atom>
+                                        </primary>
+                                      </factor>
+                                    </term>
+                                  </comparison>
+                                </not test>
+                              </and test>
+                            </expr>
+                            <expr>
+                              <and test>
+                                <not test>
+                                  <comparison>
+                                    <term>
+                                      <factor>
+                                        <primary>
+                                          <atom>
+                                            <name>
+                                            </name>
+                                          </atom>
+                                        </primary>
+                                      </factor>
+                                    </term>
+                                  </comparison>
+                                </not test>
+                              </and test>
+                            </expr>
+                          </arguments>
+                        </primary suffix>
+                      </primary>
+                    </factor>
+                  </term>
+                </comparison>
+              </not test>
+            </and test>
+          </expr>
+        </expr stmt>
+      </small stmt>
+    </small stmt list>
+  </stmt>
+</program>
